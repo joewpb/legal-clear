@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "description": "Circuit-specific local forms not available as statewide Supreme Court forms",
+    "last_updated": "2026-05-29",
+    "circuits_scraped": 10,
+    "circuits_total": 20,
+    "total_forms": 52
+  },
+  "circuits": {
+    "5": {
+      "counties": ["Citrus", "Hernando", "Lake", "Marion", "Sumter"],
+      "self_help_url": "https://www.circuit5.org/self-help-center",
+      "forms": [
+        {"id": "5th-child-support-contest", "name": "Motion to Contest Child Support Delinquency (Admin)", "type": "packet", "case_types": ["child-support-modification"], "file": "mtn-to-contest-cs-delinq-admin-packet.pdf"},
+        {"id": "5th-child-support-contest-2", "name": "Motion to Contest Child Support Delinquency (Court)", "type": "packet", "case_types": ["child-support-modification"], "file": "mtn-to-contest-cs-delinquency-packet.pdf"},
+        {"id": "5th-cs-enforce", "name": "Petition to Enforce Admin Child Support Order", "type": "packet", "case_types": ["child-support-modification"], "file": "pet-enforce-admin-cs-ord-packet.pdf"},
+        {"id": "5th-cs-supersede", "name": "Petition to Supersede/Modify Admin Child Support Order", "type": "packet", "case_types": ["child-support-modification"], "file": "pet-supersede-admin-ord-packet.pdf"},
+        {"id": "5th-dl-suspension", "name": "Petition to Contest DL Suspension for Nonpayment", "type": "packet", "case_types": ["child-support-modification"], "file": "pet-to-contest-ntc-intent-to-susp-dl-for-nonpymnt-packet.pdf"},
+        {"id": "5th-dl-suspension-admin", "name": "Petition to Contest DL Suspension (Admin)", "type": "packet", "case_types": ["child-support-modification"], "file": "pet-to-contest-ntc-intent-to-susp-dl-admin-packet.pdf"},
+        {"id": "5th-parenting-unmarried", "name": "Petition for Parenting Plan with Time-Sharing (Unmarried Parents)", "type": "form", "case_types": ["child-custody-timesharing"], "file": "petition-for-parenting-plan-with-time-sharing-schedule-and-support-unconnected-with-dissolution-of-marriage.pdf"},
+        {"id": "5th-parenting-nevermarr", "name": "Petition to Establish Parenting Plan (Never Married)", "type": "form", "case_types": ["child-custody-timesharing"], "file": "petition-to-establish-parenting-plan-with-time-sharing-schedule-with-minor-children-of-parents-who-were.pdf"},
+        {"id": "5th-settlement-unmarried", "name": "Settlement Agreement for Never Married with Children", "type": "form", "case_types": ["child-custody-timesharing"], "file": "settlement-agreement-for-parties-never-married-with-children-and-instructions.pdf"},
+        {"id": "5th-pretrial-parenting", "name": "Pretrial Statement — Dissolution with Parenting Issues", "type": "form", "case_types": ["divorce-with-children"], "file": "pretrial-statement-dissolution-of-marriage-actions-involving-parenting-issues.pdf"},
+        {"id": "5th-pretrial-nokids", "name": "Pretrial Statement — Dissolution without Children", "type": "form", "case_types": ["divorce-without-children"], "file": "pretrial-statement-dissolution-of-marriage-without-childrens-issues.pdf"},
+        {"id": "5th-telephonic", "name": "Motion for Telephonic Appearance", "type": "form", "case_types": ["divorce-with-children", "divorce-without-children", "child-custody-timesharing"], "file": "motion-for-telephonic-appearance.pdf"},
+        {"id": "5th-telephonic-mediation", "name": "Motion for Telephonic Appearance at Mediation", "type": "form", "case_types": ["divorce-with-children", "divorce-without-children"], "file": "motion-for-telephonic-appearance-at-mediation.pdf"},
+        {"id": "5th-income-withholding", "name": "Motion for Income Withholding Order", "type": "form", "case_types": ["divorce-with-children", "child-custody-timesharing", "child-support-modification"], "file": "motion-for-income-withholding-order.pdf"},
+        {"id": "5th-waiver-service", "name": "Waiver of Service of Process", "type": "form", "case_types": ["divorce-with-children", "divorce-without-children", "child-custody-timesharing"], "file": "waiver-of-service-of-process.pdf"},
+        {"id": "5th-answer", "name": "Answer to Petition (circuit-specific)", "type": "form", "case_types": ["divorce-with-children", "divorce-without-children"], "file": "answer-to-petition.pdf"},
+        {"id": "5th-answer-supp", "name": "Answer to Supplemental Petition", "type": "form", "case_types": ["child-support-modification"], "file": "answer-to-supplemental-petition.pdf"},
+        {"id": "5th-ai-notice", "name": "Use of AI in Court Documents (Notice)", "type": "form", "case_types": ["divorce-with-children", "divorce-without-children", "child-custody-timesharing", "child-support-modification"], "file": "use-of-ai-in-documents.pdf"},
+        {"id": "5th-final-hearing", "name": "Motion for Order Setting Final Hearing/Non-Jury Trial", "type": "form", "case_types": ["divorce-with-children", "divorce-without-children"], "file": "motion-for-order-setting-final-hearingnon-jury-trial.pdf"},
+        {"id": "5th-child-support-suspend", "name": "Motion to Suspend/Terminate Child Support", "type": "form", "case_types": ["child-support-modification"], "file": "motion-to-suspend-terminate-child-support.pdf"}
+      ]
+    },
+    "10": {
+      "counties": ["Hardee", "Highlands", "Polk"],
+      "self_help_url": "https://www.jud10.flcourts.org/self-help-pro-se",
+      "forms": [
+        {"id": "10th-pro-se-guide", "name": "Pro Se Self-Help Information Guide", "type": "guide", "case_types": ["divorce-with-children", "divorce-without-children", "child-custody-timesharing"], "file": "ProSe_SelfHelp.pdf"},
+        {"id": "10th-contest-dl", "name": "Instructions for Contesting Delinquency/DL Suspension", "type": "guide", "case_types": ["child-support-modification"], "file": "Instructions_ContestingDelinqDLSusp.pdf"},
+        {"id": "10th-relocation-checklist", "name": "Relocation Forms Checklist/Cover Sheet", "type": "checklist", "case_types": ["divorce-with-children", "child-custody-timesharing"], "file": "ChecklistCoverSheet_RelocationForms.pdf"},
+        {"id": "10th-supervised-visit", "name": "Supervised Visitation Information & Provider List", "type": "guide", "case_types": ["divorce-with-children", "child-custody-timesharing"], "file": "SupervisedVisitation.pdf"},
+        {"id": "10th-motion-iwo", "name": "Motion for Income Withholding Order", "type": "form", "case_types": ["divorce-with-children", "child-custody-timesharing", "child-support-modification"], "file": "MotionForIWO.pdf"},
+        {"id": "10th-acceptance-service", "name": "Acceptance of Service Form", "type": "form", "case_types": ["divorce-with-children", "divorce-without-children", "child-custody-timesharing"], "file": "AcceptanceOfServiceForm.pdf"}
+      ]
+    },
+    "19": {
+      "counties": ["Indian River", "Martin", "Okeechobee", "St. Lucie"],
+      "self_help_url": "https://www.circuit19.org/forms-and-checklists",
+      "forms": [
+        {"id": "19th-980a", "name": "Form 12.980(a) — Injunction Against Domestic Violence (circuit variant)", "type": "form", "case_types": ["domestic-violence-injunction"], "file": "980a-%208.28.pdf"},
+        {"id": "19th-980c2", "name": "Form 12.980(c)(2) — Injunction (circuit variant)", "type": "form", "case_types": ["domestic-violence-injunction"], "file": "980c2.pdf"},
+        {"id": "19th-980g", "name": "Form 12.980(g) — Injunction (circuit variant)", "type": "form", "case_types": ["domestic-violence-injunction"], "file": "980g.pdf"},
+        {"id": "19th-980i", "name": "Form 12.980(i) — Injunction (circuit variant)", "type": "form", "case_types": ["domestic-violence-injunction"], "file": "980i.pdf"},
+        {"id": "19th-980j", "name": "Form 12.980(j) — Injunction (circuit variant)", "type": "form", "case_types": ["domestic-violence-injunction"], "file": "980j.pdf"},
+        {"id": "19th-980k", "name": "Form 12.980(k) — Injunction (circuit variant)", "type": "form", "case_types": ["domestic-violence-injunction"], "file": "980k.pdf"},
+        {"id": "19th-980n", "name": "Form 12.980(n) — Injunction (circuit variant)", "type": "form", "case_types": ["domestic-violence-injunction"], "file": "980n%208.28.pdf"},
+        {"id": "19th-980o", "name": "Form 12.980(o) — Injunction (circuit variant)", "type": "form", "case_types": ["domestic-violence-injunction"], "file": "980o.pdf"},
+        {"id": "19th-980q", "name": "Form 12.980(q) — Injunction (circuit variant)", "type": "form", "case_types": ["domestic-violence-injunction"], "file": "980q-%208.29.pdf"},
+        {"id": "19th-980r", "name": "Form 12.980(r) — Injunction (circuit variant)", "type": "form", "case_types": ["domestic-violence-injunction"], "file": "980r.pdf"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,339 @@
+[
+  {
+    "id": 1,
+    "url": "https://www.jud1.flcourts.org/self-help",
+    "counties": [
+      "Escambia",
+      "Okaloosa",
+      "Santa Rosa",
+      "Walton"
+    ],
+    "status": "ERR: [Errno -2] Name or service not known"
+  },
+  {
+    "id": 2,
+    "url": "https://www.jud2.flcourts.org/self-help",
+    "counties": [
+      "Franklin",
+      "Gadsden",
+      "Jefferson",
+      "Leon",
+      "Liberty",
+      "Wakulla"
+    ],
+    "status": "ERR: [Errno -2] Name or service not known"
+  },
+  {
+    "id": 3,
+    "url": "https://www.jud3.flcourts.org/self-help",
+    "counties": [
+      "Columbia",
+      "Dixie",
+      "Hamilton",
+      "Lafayette",
+      "Madison",
+      "Suwannee",
+      "Taylor"
+    ],
+    "status": "ERR: [SSL: SSLV3_ALERT_HANDSHAKE_FAILURE] ssl/tls alert handshake failure (_ssl.c:1016)"
+  },
+  {
+    "id": 4,
+    "url": "https://www.jud4.org/self-help",
+    "counties": [
+      "Clay",
+      "Duval",
+      "Nassau"
+    ],
+    "status": "ok",
+    "pdf_count": 0,
+    "supreme_refs": 2,
+    "form_refs": 48,
+    "pdf_links": [],
+    "html_size": 52216
+  },
+  {
+    "id": 5,
+    "url": "https://www.circuit5.org/self-help-center",
+    "counties": [
+      "Citrus",
+      "Hernando",
+      "Lake",
+      "Marion",
+      "Sumter"
+    ],
+    "status": "ok",
+    "pdf_count": 31,
+    "supreme_refs": 0,
+    "form_refs": 195,
+    "pdf_links": [
+      "https://www.circuit5.org/wp-content/uploads/2023/09/designation-of-current-mailing-or-email-address-sept.-23-fillable.pdf",
+      "https://www.circuit5.org/wp-content/uploads/2026/04/use-of-ai-in-documents.pdf",
+      "/wp-content/uploads/2018/05/addendum-to-petition.pdf",
+      "/wp-content/uploads/2018/05/petition-for-parenting-plan-with-time-sharing-schedule-and-support-unconnected-with-dissolution-of-marriage.pdf",
+      "/wp-content/uploads/2018/05/petition-to-establish-parenting-plan-with-time-sharing-schedule-with-minor-children-of-parents-who-were.pdf",
+      "/wp-content/uploads/2019/11/mtn-to-contest-cs-delinq-admin-packet.pdf",
+      "/wp-content/uploads/2019/11/mtn-to-contest-cs-delinquency-packet.pdf",
+      "/wp-content/uploads/2019/11/pet-enforce-admin-cs-ord-packet.pdf",
+      "/wp-content/uploads/2019/11/pet-supersede-admin-ord-packet.pdf",
+      "/wp-content/uploads/2019/11/pet-to-contest-ntc-intent-to-susp-dl-for-nonpymnt-packet.pdf",
+      "/wp-content/uploads/2019/11/pet-to-contest-ntc-intent-to-susp-dl-admin-packet.pdf",
+      "/wp-content/uploads/2018/05/motion-for-telephonic-appearance.pdf",
+      "/wp-content/uploads/2018/05/motion-for-telephonic-appearance-at-mediation.pdf",
+      "/wp-content/uploads/2018/05/motion-for-income-withholding-order.pdf",
+      "/wp-content/uploads/2018/05/motion-for-order-setting-final-hearingnon-jury-trial.pdf",
+      "/wp-content/uploads/2019/03/motion-to-contest-drivers-license-suspension-revocation.pdf",
+      "/wp-content/uploads/2018/05/motion-to-suspend-terminate-child-support.pdf",
+      "/wp-content/uploads/2018/05/motion-to-or-for.pdf",
+      "/wp-content/uploads/2018/05/pretrial-statement-dissolution-of-marriage-actions-involving-parenting-issues.pdf",
+      "/wp-content/uploads/2018/05/pretrial-statement-dissolution-of-marriage-without-childrens-issues.pdf"
+    ],
+    "html_size": 126298
+  },
+  {
+    "id": 6,
+    "url": "https://www.jud6.flcourts.org/self-help",
+    "counties": [
+      "Pasco",
+      "Pinellas"
+    ],
+    "status": "ERR: [Errno -2] Name or service not known"
+  },
+  {
+    "id": 7,
+    "url": "https://www.circuit7.org/family-court-services",
+    "counties": [
+      "Flagler",
+      "Putnam",
+      "St. Johns",
+      "Volusia"
+    ],
+    "status": "HTTP 403"
+  },
+  {
+    "id": 8,
+    "url": "https://circuit8.org/self-help",
+    "counties": [
+      "Alachua",
+      "Baker",
+      "Bradford",
+      "Gilchrist",
+      "Levy",
+      "Union"
+    ],
+    "status": "ok",
+    "pdf_count": 2,
+    "supreme_refs": 0,
+    "form_refs": 91,
+    "pdf_links": [
+      "https://circuit8.org/wp-content/uploads/HPC-Self-Help-Workshops-Flyer.pdf",
+      "https://circuit8.org/wp-content/uploads/TRLS-Brochure.pdf"
+    ],
+    "html_size": 168149
+  },
+  {
+    "id": 9,
+    "url": "https://ninthcircuit.org/self-help",
+    "counties": [
+      "Orange",
+      "Osceola"
+    ],
+    "status": "HTTP 500"
+  },
+  {
+    "id": 10,
+    "url": "https://www.jud10.flcourts.org/self-help-pro-se",
+    "counties": [
+      "Hardee",
+      "Highlands",
+      "Polk"
+    ],
+    "status": "ok",
+    "pdf_count": 15,
+    "supreme_refs": 0,
+    "form_refs": 40,
+    "pdf_links": [
+      "https://jud10.flcourts.org/sites/default/files/docs/10th_Judicial_Circuit&#039;s_Instructions_for_submitting_Proposed_Orders_to_Florida&#039;s_E-Filing_Portal.pdf",
+      "https://jud10.flcourts.org/sites/default/files/docs/Quickparts_and_ePortal_ICMS_Proposed_Orders.pdf",
+      "https://www.jud10.flcourts.org/sites/default/files/adminOrders/AO_1-61.1.pdf",
+      "sites/default/files/docs/ProSe/ProSe_SelfHelp.pdf",
+      "sites/default/files/adminOrders/AO_5-20.8.pdf",
+      "sites/default/files/adminOrders/5-51.0.pdf",
+      "sites/default/files/docs/ProSe/NoticeOfLimitationOfServicesProvided.pdf",
+      "sites/default/files/docs/ProSe/AcceptanceOfServiceForm.pdf",
+      "sites/default/files/adminOrders/AO_5-20.7.pdf",
+      "sites/default/files/docs/ProSe/Instructions_ContestingDelinqDLSusp.pdf",
+      "sites/default/files/docs/ProSe/MotionForIWO.pdf",
+      "sites/default/files/docs/ProSe/ChecklistCoverSheet_RelocationForms.pdf",
+      "sites/default/files/docs/ProSe/RulesOfCourtroomCivility.pdf",
+      "sites/default/files/docs/ProSe/SupervisedVisitation.pdf",
+      "sites/default/files/docs/ProSe/SamsHouseSupervisedVisitationAgency.pdf"
+    ],
+    "html_size": 57983
+  },
+  {
+    "id": 11,
+    "url": "https://www.jud11.flcourts.org/Family-Court-Self-Help-Packets-and-Forms",
+    "counties": [
+      "Miami-Dade"
+    ],
+    "status": "ok",
+    "pdf_count": 32,
+    "supreme_refs": 0,
+    "form_refs": 67,
+    "pdf_links": [
+      "https://www.jud11.flcourts.org/docs/osca-long-range-plan-2022-27.pdf",
+      "docs/Self Help packet request via mail - 6-11.pdf",
+      "docs/selfhelp_Rule.pdf",
+      "/docs/Self Help Fee Schedule (Online) - 2.pdf",
+      "docs/Divorce with Minor Children Agreement.pdf",
+      "docs/Divorce with Minor Children (No Agreement) Summons.pdf",
+      "docs/Modification Child Support (No Agreement) Summons.pdf",
+      "docs/Modification Child Support and Parenting Plan (No Agreement) Summons.pdf",
+      "docs/Modification Child Support and Parenting Plan Agreement.pdf",
+      "docs/Paternity (No Agreement) Summons.pdf",
+      "docs/Paternity Agreement.pdf",
+      "docs/Temporary Custody.pdf",
+      "docs/Fingerprint Instructions and Locations.pdf",
+      "docs/Designation of email address by SRL form 2.602 fillable.pdf",
+      "docs/Notice Of Publication (Divorce).pdf",
+      "docs/Summons Online.pdf",
+      "docs/Affidavit of Diligent Search.pdf",
+      "docs/Diligent Search Letters.pdf",
+      "docs/ACKNOWLEDGMENT OF PATERNITY.pdf",
+      "docs/Case Management Conference.pdf"
+    ],
+    "html_size": 66274
+  },
+  {
+    "id": 12,
+    "url": "https://www.jud12.flcourts.org/About/Divisions/Family/Pro-Se-Forms-Instructions",
+    "counties": [
+      "DeSoto",
+      "Manatee",
+      "Sarasota"
+    ],
+    "status": "ok",
+    "pdf_count": 1,
+    "supreme_refs": 2,
+    "form_refs": 144,
+    "pdf_links": [
+      "/Portals/0/Documents/Divisions/Family/Forms/ProSe/family-form-A.pdf?ver=5B3RnwXKvAFirASuhhQKGA%3d%3d"
+    ],
+    "html_size": 80057
+  },
+  {
+    "id": 13,
+    "url": "https://www.fljud13.org/SelfHelp.aspx",
+    "counties": [
+      "Hillsborough"
+    ],
+    "status": "ok",
+    "pdf_count": 1,
+    "supreme_refs": 1,
+    "form_refs": 28,
+    "pdf_links": [
+      "https://www.fljud13.org/Portals/0/Forms/pdfs/genciv/CircuitCivilAppellatePracticePreferences.pdf?ver=2016-04-26-163807-650&ver=2016-04-26-163807-650"
+    ],
+    "html_size": 26798
+  },
+  {
+    "id": 14,
+    "url": "https://www.jud14.flcourts.org/self-help",
+    "counties": [
+      "Bay",
+      "Calhoun",
+      "Gulf",
+      "Holmes",
+      "Jackson",
+      "Washington"
+    ],
+    "status": "ok",
+    "pdf_count": 2,
+    "supreme_refs": 0,
+    "form_refs": 36,
+    "pdf_links": [
+      "/uploaded/media/doc/Court_Appointed_Examining_Committee_form.pdf",
+      "/uploaded/20261905165411_Early-Childhood-Court-Success-Story.pdf"
+    ],
+    "html_size": 60120
+  },
+  {
+    "id": 15,
+    "url": "https://www.15thcircuit.com/self-help",
+    "counties": [
+      "Palm Beach"
+    ],
+    "status": "HTTP 404"
+  },
+  {
+    "id": 16,
+    "url": "https://www.jud16.flcourts.org/self-help",
+    "counties": [
+      "Monroe"
+    ],
+    "status": "ERR: [Errno -2] Name or service not known"
+  },
+  {
+    "id": 17,
+    "url": "https://www.17th.flcourts.org/self-help",
+    "counties": [
+      "Broward"
+    ],
+    "status": "ok",
+    "pdf_count": 0,
+    "supreme_refs": 0,
+    "form_refs": 30,
+    "pdf_links": [],
+    "html_size": 83787
+  },
+  {
+    "id": 18,
+    "url": "https://www.flcourts18.org/self-help",
+    "counties": [
+      "Brevard",
+      "Seminole"
+    ],
+    "status": "HTTP 503"
+  },
+  {
+    "id": 19,
+    "url": "https://www.circuit19.org/forms-and-checklists",
+    "counties": [
+      "Indian River",
+      "Martin",
+      "Okeechobee",
+      "St. Lucie"
+    ],
+    "status": "ok",
+    "pdf_count": 11,
+    "supreme_refs": 12,
+    "form_refs": 112,
+    "pdf_links": [
+      "https://www.circuit19.org/wp-content/uploads/2026/04/Amended-AO-2026-03_Judicial-Assignments-for-2026.pdf",
+      "https://www.flcourts.gov/content/download/685947/file_pdf/980a-%208.28.pdf",
+      "https://www.flcourts.gov/content/download/685951/file_pdf/980c2.pdf",
+      "https://www.flcourts.gov/content/download/685957/file_pdf/980k.pdf",
+      "https://www.flcourts.gov/content/download/685971/file_pdf/980r.pdf",
+      "https://www.flcourts.gov/content/download/685967/file_pdf/980o.pdf",
+      "https://www.flcourts.gov/content/download/685966/file_pdf/980n%208.28.pdf",
+      "https://www.flcourts.gov/content/download/685970/file_pdf/980q-%208.29.pdf",
+      "https://www.flcourts.gov/content/download/685960/file_pdf/980g.pdf",
+      "https://www.flcourts.gov/content/download/685963/file_pdf/980j.pdf",
+      "https://www.flcourts.gov/content/download/685962/file_pdf/980i.pdf"
+    ],
+    "html_size": 155830
+  },
+  {
+    "id": 20,
+    "url": "https://www.jud20.flcourts.org/self-help",
+    "counties": [
+      "Charlotte",
+      "Collier",
+      "Glades",
+      "Hendry",
+      "Lee"
+    ],
+    "status": "ERR: [Errno -2] Name or service not known"
+  }
+]
