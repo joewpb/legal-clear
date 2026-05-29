@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>File Browser — /home/hermes/wiki</title>
+<style>
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --border: #30363d;
+  --text: #c9d1d9;
+  --text-muted: #8b949e;
+  --accent: #58a6ff;
+  --accent-dim: #1f6feb33;
+  --danger: #f85149;
+  --folder: #d2a8ff;
+  --pdf: #f85149;
+  --md: #58a6ff;
+  --code-bg: #1c2128;
+  --hover: #1c2128;
+  --radius: 6px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); height: 100vh; display: flex; flex-direction: column; }
+header { display: flex; align-items: center; gap: 12px; padding: 10px 16px; background: var(--surface); border-bottom: 1px solid var(--border); flex-shrink: 0; }
+header h1 { font-size: 15px; font-weight: 600; }
+header .path-breadcrumb { font-size: 13px; color: var(--text-muted); margin-left: 8px; display: flex; align-items: center; gap: 4px; }
+header .path-breadcrumb span { color: var(--accent); cursor: pointer; }
+header .path-breadcrumb span:hover { text-decoration: underline; }
+header .stats { margin-left: auto; font-size: 12px; color: var(--text-muted); }
+main { display: flex; flex: 1; overflow: hidden; }
+.sidebar { width: 320px; min-width: 240px; background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; flex-shrink: 0; }
+.sidebar-header { padding: 10px 14px; font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid var(--border); flex-shrink: 0; display: flex; align-items: center; gap: 8px; }
+.sidebar-header .back-btn { cursor: pointer; opacity: 0.6; font-size: 16px; padding: 2px 6px; border-radius: 4px; }
+.sidebar-header .back-btn:hover { opacity: 1; background: var(--hover); }
+.file-list { flex: 1; overflow-y: auto; padding: 4px 0; }
+.file-item { display: flex; align-items: center; gap: 10px; padding: 6px 14px; cursor: pointer; font-size: 13px; transition: background 0.1s; }
+.file-item:hover { background: var(--hover); }
+.file-item.active { background: var(--accent-dim); border-left: 2px solid var(--accent); }
+.file-item .icon { width: 18px; text-align: center; font-size: 15px; flex-shrink: 0; }
+.file-item .name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.file-item .size { font-size: 11px; color: var(--text-muted); flex-shrink: 0; }
+.file-item.dir .name { color: var(--folder); font-weight: 500; }
+.file-item.pdf .icon { color: var(--pdf); }
+.file-item.md .icon { color: var(--md); }
+.preview { flex: 1; display: flex; flex-direction: column; overflow: hidden; background: var(--bg); }
+.preview-header { padding: 8px 16px; border-bottom: 1px solid var(--border); font-size: 13px; color: var(--text-muted); flex-shrink: 0; display: flex; align-items: center; gap: 8px; }
+.preview-body { flex: 1; overflow: auto; }
+.preview-empty { display: flex; align-items: center; justify-content: center; height: 100%; color: var(--text-muted); font-size: 14px; flex-direction: column; gap: 8px; }
+.preview-empty .icon { font-size: 48px; opacity: 0.3; }
+.preview-iframe { width: 100%; height: 100%; border: none; background: #fff; }
+.markdown-content { padding: 24px 32px; max-width: 800px; line-height: 1.6; }
+.markdown-content h1 { font-size: 24px; margin: 24px 0 12px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+.markdown-content h2 { font-size: 20px; margin: 20px 0 10px; }
+.markdown-content h3 { font-size: 16px; margin: 16px 0 8px; }
+.markdown-content p { margin: 8px 0; }
+.markdown-content ul, .markdown-content ol { margin: 8px 0; padding-left: 24px; }
+.markdown-content li { margin: 4px 0; }
+.markdown-content code { background: var(--code-bg); padding: 2px 6px; border-radius: 3px; font-size: 13px; }
+.markdown-content pre { background: var(--code-bg); padding: 14px; border-radius: var(--radius); overflow-x: auto; margin: 12px 0; }
+.markdown-content pre code { background: none; padding: 0; }
+.markdown-content a { color: var(--accent); }
+.markdown-content hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
+.markdown-content strong { color: #e6edf3; }
+.text-preview { padding: 16px 24px; font-family: 'SF Mono', 'Fira Code', monospace; font-size: 12px; line-height: 1.5; white-space: pre-wrap; color: var(--text); }
+.image-preview { display: flex; align-items: center; justify-content: center; padding: 24px; }
+.image-preview img { max-width: 100%; max-height: 90vh; border-radius: var(--radius); }
+@media (max-width: 768px) {
+  .sidebar { width: 100%; min-width: 0; }
+  .preview { display: none; }
+  .preview.active { display: flex; position: fixed; inset: 0; z-index: 10; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>📁 File Browser</h1>
+  <div class="path-breadcrumb" id="breadcrumb"></div>
+  <div class="stats" id="stats"></div>
+</header>
+<main>
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <span class="back-btn" id="backBtn" onclick="goUp()" title="Go up">↑</span>
+      <span id="currentDir">wiki/</span>
+    </div>
+    <div class="file-list" id="fileList"></div>
+  </nav>
+  <section class="preview" id="preview">
+    <div class="preview-header" id="previewHeader"></div>
+    <div class="preview-body" id="previewBody">
+      <div class="preview-empty">
+        <div class="icon">📄</div>
+        <div>Select a file to preview</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script>
+const STATE = { currentPath: '', currentFile: null };
+
+const ICONS = {
+  dir: '📁', pdf: '📕', md: '📝', py: '🐍', json: '📋', html: '🌐',
+  css: '🎨', js: '📜', txt: '📄', log: '📋', png: '🖼', jpg: '🖼',
+  jpeg: '🖼', gif: '🖼', svg: '🖼', default: '📄'
+};
+
+function getIcon(name, isDir) {
+  if (isDir) return ICONS.dir;
+  const ext = name.split('.').pop().toLowerCase();
+  return ICONS[ext] || ICONS.default;
+}
+
+function getFileClass(name) {
+  const ext = name.split('.').pop().toLowerCase();
+  if (ext === 'pdf') return 'pdf';
+  if (ext === 'md') return 'md';
+  return '';
+}
+
+function formatSize(bytes) {
+  if (bytes === 0) return '';
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1048576) return (bytes / 1024).toFixed(1) + ' KB';
+  return (bytes / 1048576).toFixed(1) + ' MB';
+}
+
+async function loadDir(path) {
+  const resp = await fetch('/api/list?path=' + encodeURIComponent(path));
+  const data = await resp.json();
+  if (data.error) { alert(data.error); return; }
+  STATE.currentPath = data.path;
+  renderDir(data);
+}
+
+function renderDir(data) {
+  const list = document.getElementById('fileList');
+  const dirLabel = document.getElementById('currentDir');
+  const stats = document.getElementById('stats');
+  const breadcrumb = document.getElementById('breadcrumb');
+  const backBtn = document.getElementById('backBtn');
+
+  dirLabel.textContent = data.path || 'wiki/';
+  stats.textContent = data.items.length + ' items';
+  backBtn.style.opacity = data.path ? '1' : '0.3';
+
+  // Breadcrumb
+  const parts = (data.path || '').split('/').filter(Boolean);
+  let crumbs = '<span onclick="loadDir(\'\')">wiki</span>';
+  let accum = '';
+  for (const p of parts) {
+    accum += (accum ? '/' : '') + p;
+    crumbs += ' / <span onclick="loadDir(\'' + accum + '\')">' + p + '</span>';
+  }
+  breadcrumb.innerHTML = crumbs;
+
+  list.innerHTML = '';
+  for (const item of data.items) {
+    const div = document.createElement('div');
+    div.className = 'file-item' + (item.is_dir ? ' dir' : '') + (item.is_dir ? '' : ' ' + getFileClass(item.name));
+    if (STATE.currentFile === item.path) div.classList.add('active');
+    div.innerHTML = '<span class="icon">' + getIcon(item.name, item.is_dir) + '</span>' +
+      '<span class="name">' + item.name + '</span>' +
+      '<span class="size">' + (item.is_dir ? '' : formatSize(item.size)) + '</span>';
+    div.onclick = () => item.is_dir ? loadDir(item.path) : previewFile(item);
+    list.appendChild(div);
+  }
+}
+
+function goUp() {
+  if (!STATE.currentPath) return;
+  const parts = STATE.currentPath.split('/');
+  parts.pop();
+  loadDir(parts.join('/'));
+}
+
+function previewFile(item) {
+  STATE.currentFile = item.path;
+  // Update active state in sidebar
+  document.querySelectorAll('.file-item').forEach(el => el.classList.remove('active'));
+  const items = document.querySelectorAll('.file-item');
+  for (const el of items) {
+    if (el.querySelector('.name').textContent === item.name) {
+      el.classList.add('active');
+      break;
+    }
+  }
+
+  const header = document.getElementById('previewHeader');
+  const body = document.getElementById('previewBody');
+  const ext = item.name.split('.').pop().toLowerCase();
+  const url = '/' + item.path;
+
+  header.textContent = item.name + ' — ' + formatSize(item.size);
+
+  if (ext === 'pdf') {
+    body.innerHTML = '<iframe class="preview-iframe" src="' + url + '"></iframe>';
+  } else if (['png','jpg','jpeg','gif','svg','webp'].includes(ext)) {
+    body.innerHTML = '<div class="image-preview"><img src="' + url + '" alt="' + item.name + '"></div>';
+  } else if (ext === 'md') {
+    loadMarkdown(item.path);
+  } else if (['py','js','json','html','css','txt','log','yml','yaml','toml','sh','conf','csv'].includes(ext)) {
+    fetch(url).then(r => r.text()).then(text => {
+      body.innerHTML = '<div class="text-preview">' + escapeHtml(text) + '</div>';
+    });
+  } else {
+    body.innerHTML = '<div class="preview-empty"><div class="icon">📄</div><div>Preview not available</div><div style="font-size:12px;margin-top:8px"><a href="' + url + '" download>Download file</a></div></div>';
+  }
+}
+
+async function loadMarkdown(path) {
+  const resp = await fetch('/api/markdown?path=' + encodeURIComponent(path));
+  const data = await resp.json();
+  const body = document.getElementById('previewBody');
+  if (data.html) {
+    body.innerHTML = '<div class="markdown-content">' + data.html + '</div>';
+  } else {
+    body.innerHTML = '<div class="preview-empty">Error loading markdown</div>';
+  }
+}
+
+function escapeHtml(text) {
+  return text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+// Start
+loadDir('');
+</script>
+</body>
+</html>
