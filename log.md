@@ -24,3 +24,17 @@
   - concepts/florida-court-system.md — court structure for pro se litigants
 - Updated index.md: 5 pages total
 - Three-phase strategy: (1) Smart Directory ✓, (2) AI Form Finder, (3) Full Platform
+
+## [2026-05-28] create | Phase 2 — AI Form Finder built
+- Built scripts/form_finder.py — Python form-finder with decision tree interview
+  - 13 case types, 40+ plain-English form explanations
+  - County → circuit/clerk lookup for all 67 counties
+  - DIY Florida integration with automatic recommendation
+  - Works as CLI or interactive interview
+- Created skill: legal-clear — Hermes skill for conversational form-finding
+- Key features:
+  - Decision tree narrows from general category → specific case type in 1-3 questions
+  - Plain-English explanations of EVERY form: what it's for, when to use it
+  - Automatic routing to DIY Florida when available
+  - County-specific circuit URLs, clerk websites, and self-help center links
+  - Free legal aid and lawyer referral links included in every recommendation
