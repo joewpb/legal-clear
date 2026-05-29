@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal Clear — Florida Pro Se Court Forms</title>
+<style>
+:root {
+  --bg: #08080c;
+  --surface: #111118;
+  --surface2: #181820;
+  --border: #222230;
+  --text: #e4e4ec;
+  --text2: #8888a0;
+  --accent: #6c5ce7;
+  --accent2: #a78bfa;
+  --green: #00d2a0;
+  --amber: #f5a623;
+  --red: #ff6b6b;
+  --radius: 18px;
+  --radius-sm: 12px;
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+body::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at 30% 20%, rgba(108,92,231,0.06) 0%, transparent 50%),
+              radial-gradient(ellipse at 70% 60%, rgba(0,210,160,0.04) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Layout ── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+/* ── Header ── */
+header {
+  padding: 32px 0 16px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+.logo { display: flex; align-items: center; gap: 12px; }
+.logo-icon {
+  width: 40px; height: 40px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px;
+}
+.logo span { font-size: 22px; font-weight: 700; letter-spacing: -0.5px; }
+.nav { display: flex; gap: 24px; }
+.nav a { color: var(--text2); text-decoration: none; font-size: 14px; transition: color .2s; }
+.nav a:hover { color: var(--text); }
+
+/* ── Bento Grid ── */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: all .25s ease;
+  position: relative;
+  overflow: hidden;
+}
+.card:hover { border-color: #333348; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,.4); }
+.card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.06), transparent);
+}
+.card-title { font-size: 14px; color: var(--text2); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; font-weight: 600; }
+
+/* Card sizes */
+.card-hero { grid-column: 1 / 3; grid-row: 1 / 3; padding: 32px; }
+.card-hero h1 { font-size: 42px; line-height: 1.1; font-weight: 800; letter-spacing: -1.5px; margin-bottom: 16px; background: linear-gradient(135deg, #fff, #c4b5fd); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.card-hero p { color: var(--text2); font-size: 17px; max-width: 460px; margin-bottom: 24px; line-height: 1.7; }
+.card-hero .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.card-finder { grid-column: 3 / 5; grid-row: 1 / 2; cursor: pointer; }
+.card-finder h2 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+.card-finder .finder-prompt { color: var(--text2); font-size: 15px; }
+
+.card-stats { grid-column: 3 / 4; grid-row: 2 / 3; display: flex; flex-direction: column; justify-content: center; }
+.card-stats .stat { font-size: 32px; font-weight: 800; color: var(--accent2); }
+.card-stats .stat-label { color: var(--text2); font-size: 13px; }
+
+.card-diy { grid-column: 4 / 5; grid-row: 2 / 3; background: linear-gradient(135deg, rgba(0,210,160,.08), rgba(0,210,160,.02)); }
+.card-diy .diy-badge { display: inline-block; background: rgba(0,210,160,.15); color: var(--green); padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 600; margin-bottom: 12px; }
+
+/* Case type cards */
+.card-case { cursor: pointer; min-height: 180px; }
+.card-case .icon { font-size: 28px; margin-bottom: 8px; }
+.card-case h3 { font-size: 17px; font-weight: 700; margin-bottom: 4px; }
+.card-case p { color: var(--text2); font-size: 13px; line-height: 1.5; }
+.card-case .tag { display: inline-block; background: rgba(108,92,231,.12); color: var(--accent2); padding: 2px 8px; border-radius: 4px; font-size: 11px; margin-top: 10px; }
+
+.card-family { grid-column: 1 / 2; grid-row: 3 / 4; }
+.card-housing { grid-column: 2 / 3; grid-row: 3 / 4; }
+.card-money { grid-column: 3 / 4; grid-row: 3 / 4; }
+.card-protection { grid-column: 4 / 5; grid-row: 3 / 4; }
+.card-estate { grid-column: 1 / 2; grid-row: 4 / 5; }
+.card-records { grid-column: 2 / 3; grid-row: 4 / 5; }
+
+.card-how { grid-column: 3 / 5; grid-row: 4 / 5; }
+.card-how .steps { display: flex; gap: 16px; margin-top: 12px; }
+.card-how .step { flex: 1; }
+.card-how .step-num { font-size: 28px; font-weight: 800; color: var(--accent2); }
+.card-how .step-text { color: var(--text2); font-size: 13px; margin-top: 4px; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 15px; font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all .2s;
+  font-family: var(--font);
+}
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: #7c6ff7; transform: translateY(-1px); }
+.btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
+.btn-outline:hover { border-color: #444; background: rgba(255,255,255,.03); }
+
+/* ── Modal / Interview ── */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.7);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity .3s;
+}
+.modal-overlay.active { opacity: 1; pointer-events: all; }
+.modal {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  max-width: 560px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+.modal h3 { font-size: 22px; margin-bottom: 8px; }
+.modal .subtitle { color: var(--text2); font-size: 14px; margin-bottom: 24px; }
+.modal .options { display: flex; flex-direction: column; gap: 8px; }
+.modal .option {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  cursor: pointer;
+  text-align: left;
+  color: var(--text);
+  font-size: 15px;
+  font-family: var(--font);
+  transition: all .2s;
+}
+.modal .option:hover { border-color: var(--accent); background: rgba(108,92,231,.06); }
+.modal .option .opt-label { font-weight: 600; display: block; }
+.modal .option .opt-desc { color: var(--text2); font-size: 12px; margin-top: 4px; }
+.modal .back { background: none; border: none; color: var(--text2); cursor: pointer; font-size: 13px; padding: 8px 0; font-family: var(--font); }
+.modal .back:hover { color: var(--text); }
+
+/* ── Results ── */
+.result-section { margin-bottom: 20px; }
+.result-section h4 { font-size: 13px; color: var(--text2); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+.form-list { display: flex; flex-direction: column; gap: 8px; }
+.form-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+}
+.form-item .form-id { font-size: 12px; color: var(--accent2); font-weight: 600; }
+.form-item .form-name { font-weight: 600; margin: 2px 0; }
+.form-item .form-expl { color: var(--text2); font-size: 13px; }
+.badge-required { display: inline-block; background: rgba(255,107,107,.12); color: var(--red); padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 700; margin-left: 8px; text-transform: uppercase; }
+.badge-diy { display: inline-block; background: rgba(0,210,160,.12); color: var(--green); padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 700; margin-left: 8px; }
+
+.link-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px; }
+.link-row a { color: var(--accent2); text-decoration: none; font-size: 13px; }
+.link-row a:hover { text-decoration: underline; }
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 0;
+  margin-top: 48px;
+  display: flex; justify-content: space-between;
+  color: var(--text2);
+  font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bento { grid-template-columns: 1fr; }
+  .card-hero, .card-finder, .card-stats, .card-diy,
+  .card-family, .card-housing, .card-money, .card-protection,
+  .card-estate, .card-records, .card-how { grid-column: 1; grid-row: auto; }
+  .card-hero h1 { font-size: 30px; }
+  .card-how .steps { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- Header -->
+<header>
+  <div class="logo">
+    <div class="logo-icon">⚖</div>
+    <span>Legal Clear</span>
+  </div>
+  <nav class="nav">
+    <a href="#" onclick="openFinder('start')">Find Forms</a>
+    <a href="#" onclick="scrollToSection('how')">How It Works</a>
+    <a href="https://www.flcourts.gov" target="_blank">Florida Courts</a>
+    <a href="https://www.myflcourtaccess.com" target="_blank">E-Filing Portal</a>
+  </nav>
+</header>
+
+<!-- Bento Grid -->
+<div class="bento">
+
+  <!-- Hero -->
+  <div class="card card-hero">
+    <div class="card-title">Florida Pro Se Court Forms</div>
+    <h1>Navigate the courts<br>without a lawyer.</h1>
+    <p>Find the right forms for your situation, understand them in plain English, and file with confidence. Built for self-represented litigants in all 67 Florida counties.</p>
+    <div class="actions">
+      <button class="btn btn-primary" onclick="openFinder('start')">Find My Forms →</button>
+      <button class="btn btn-outline" onclick="scrollToSection('cases')">Browse by Category</button>
+    </div>
+  </div>
+
+  <!-- Quick Finder -->
+  <div class="card card-finder" onclick="openFinder('start')">
+    <div class="card-title">Quick Start</div>
+    <h2>What's your situation?</h2>
+    <p class="finder-prompt">Answer a few questions and we'll find the exact forms you need — with plain-English explanations.</p>
+    <p style="margin-top:12px;color:var(--accent2);font-weight:600;">Start Interview →</p>
+  </div>
+
+  <!-- Stats -->
+  <div class="card card-stats">
+    <div class="stat" id="form-count">120+</div>
+    <div class="stat-label">court forms indexed</div>
+    <div class="stat" style="margin-top:8px;">67</div>
+    <div class="stat-label">counties covered</div>
+  </div>
+
+  <!-- DIY Florida -->
+  <div class="card card-diy">
+    <span class="diy-badge">⭐ Recommended</span>
+    <h3 style="font-size:17px;font-weight:700;">Try DIY Florida</h3>
+    <p style="color:var(--text2);font-size:13px;margin-top:4px;">The official interactive form builder. Auto-fills forms and e-files directly — no PDFs needed.</p>
+    <a href="https://www.myflcourtaccess.com" target="_blank" style="display:inline-block;margin-top:12px;color:var(--green);font-weight:600;text-decoration:none;font-size:14px;">Open DIY Florida →</a>
+  </div>
+
+  <!-- Case Types -->
+  <div class="card card-case card-family" onclick="openFinder('family')">
+    <div class="icon">👨‍👩‍👧</div>
+    <h3>Family & Domestic</h3>
+    <p>Divorce, child custody, child support, alimony, paternity, adoption, name change</p>
+    <span class="tag">Circuit Court</span>
+  </div>
+
+  <div class="card card-case card-housing" onclick="openFinder('housing')">
+    <div class="icon">🏠</div>
+    <h3>Housing</h3>
+    <p>Evictions, landlord/tenant disputes, security deposit recovery</p>
+    <span class="tag">County Court</span>
+  </div>
+
+  <div class="card card-case card-money" onclick="openFinder('money')">
+    <div class="icon">💰</div>
+    <h3>Money & Debt</h3>
+    <p>Small claims up to $8,000 — unpaid loans, goods sold, work done, security deposits</p>
+    <span class="tag">County Court</span>
+  </div>
+
+  <div class="card card-case card-protection" onclick="openFinder('protection')">
+    <div class="icon">🛡</div>
+    <h3>Protection</h3>
+    <p>Domestic violence, repeat violence, dating violence, sexual violence, stalking injunctions</p>
+    <span class="tag">No Filing Fee</span>
+  </div>
+
+  <div class="card card-case card-estate" onclick="openFinder('estate')">
+    <div class="icon">📜</div>
+    <h3>Estates & Probate</h3>
+    <p>Small estate administration, formal probate, guardianship</p>
+    <span class="tag">Circuit Court</span>
+  </div>
+
+  <div class="card card-case card-records" onclick="openFinder('records')">
+    <div class="icon">🔒</div>
+    <h3>Criminal Records</h3>
+    <p>Expungement and sealing of criminal records</p>
+    <span class="tag">FDLE Required</span>
+  </div>
+
+  <!-- How It Works -->
+  <div class="card card-how" id="how">
+    <div class="card-title">How It Works</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-text">Tell us your situation — answer a few simple questions</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-text">Get the exact forms you need with plain-English explanations</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-text">Fill them out (we'll help) and file at your county clerk or online</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /bento -->
+
+<!-- Footer -->
+<footer>
+  <span>Legal Clear — Not legal advice. Always verify with official sources.</span>
+  <span>Florida • 20 Circuits • 67 Counties</span>
+</footer>
+
+</div><!-- /container -->
+
+<!-- Interview Modal -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal" id="modal">
+    <div id="modal-content"></div>
+  </div>
+</div>
+
+<script>
+// ── DATA ──
+const CASES = {
+  "divorce-with-children": {
+    name: "Divorce with Children", court: "Circuit Court", fee: "$408.00",
+    diy: false,
+    forms: [
+      {id:"12.901(b)(1)", name:"Petition for Dissolution with Children", req:true, expl:"Starts your divorce. Tells the court who you are, about your marriage, and what you want decided about kids, money, and property."},
+      {id:"12.902(b)", name:"Financial Affidavit (Short Form)", req:true, expl:"Lists your income, expenses, assets, and debts. Use if income is under $50K/year."},
+      {id:"12.902(c)", name:"Financial Affidavit (Long Form)", req:false, expl:"More detailed financial form. Use if income is $50K+/year."},
+      {id:"12.902(d)", name:"UCCJEA Affidavit", req:true, expl:"Tells the court where your children have lived for the past 5 years — confirms Florida can decide custody."},
+      {id:"12.902(e)", name:"Child Support Guidelines Worksheet", req:true, expl:"Calculates child support based on both parents' incomes, childcare costs, and parenting time."},
+      {id:"12.995(a)", name:"Parenting Plan", req:true, expl:"Your proposed schedule for sharing time with the children — weekdays, weekends, holidays, summers."},
+      {id:"12.932", name:"Certificate of Mandatory Disclosure", req:true, expl:"Certifies you've shared required financial documents with the other party."},
+    ]
+  },
+  "divorce-without-children": {
+    name: "Divorce without Children", court: "Circuit Court", fee: "$408.00",
+    diy: true, diy_interview: "Simplified Dissolution",
+    forms: [
+      {id:"12.901(b)(2)", name:"Petition for Dissolution without Children", req:true, expl:"Starts your divorce when you have no minor children. Tells the court who you are, what you own/owe."},
+      {id:"12.901(a)", name:"Petition for Simplified Dissolution", req:false, expl:"The fastest, cheapest divorce. Use ONLY if you both agree on everything and have no children."},
+      {id:"12.902(b)", name:"Financial Affidavit (Short Form)", req:true, expl:"Lists your income, expenses, assets, and debts."},
+    ]
+  },
+  "child-custody-timesharing": {
+    name: "Child Custody / Time-Sharing", court: "Circuit Court", fee: "$300.00",
+    diy: false,
+    forms: [
+      {id:"12.983(a)", name:"Petition to Determine Paternity", req:true, expl:"For unmarried parents — legally establishes the father and decides custody, time-sharing, and support."},
+      {id:"12.902(b)", name:"Financial Affidavit (Short Form)", req:true, expl:"Lists your income, expenses, assets, and debts."},
+      {id:"12.902(d)", name:"UCCJEA Affidavit", req:true, expl:"Confirms Florida is the right state to decide custody."},
+      {id:"12.995(a)", name:"Parenting Plan", req:true, expl:"Your proposed schedule for sharing time with the children."},
+    ]
+  },
+  "child-support-modification": {
+    name: "Child Support Modification", court: "Circuit Court", fee: "Varies",
+    diy: false,
+    forms: [
+      {id:"12.905", name:"Supplemental Petition to Modify Child Support", req:true, expl:"Asks the court to change an existing child support order because circumstances changed."},
+      {id:"12.902(b)", name:"Financial Affidavit (Short Form)", req:true, expl:"Updated financial information."},
+      {id:"12.902(e)", name:"Child Support Guidelines Worksheet", req:true, expl:"Recalculates support based on current numbers."},
+    ]
+  },
+  "domestic-violence-injunction": {
+    name: "Domestic Violence Injunction", court: "Circuit Court", fee: "$0 (no fee)",
+    diy: true, diy_interview: "Domestic Violence",
+    forms: [
+      {id:"DV-1", name:"Petition for Protection Against Domestic Violence", req:true, expl:"Asks the court for IMMEDIATE protection. The judge can order the person to stay away from you, your home, and your work."},
+      {id:"DV-2", name:"Petition Against Repeat Violence", req:false, expl:"For repeat violence from someone with no family/dating relationship — neighbor, coworker, stranger."},
+      {id:"DV-3", name:"Petition Against Dating Violence", req:false, expl:"For violence from someone you're dating or have dated."},
+      {id:"DV-4", name:"Petition Against Sexual Violence", req:false, expl:"For sexual violence — no prior relationship needed."},
+    ]
+  },
+  "eviction-landlord": {
+    name: "Eviction (Landlord)", court: "County Court", fee: "$185-$300",
+    diy: true, diy_interview: "Landlord Tenant Cases",
+    forms: [
+      {id:"County-Specific", name:"Complaint for Eviction", req:true, expl:"The main form to start an eviction. Varies by county — DIY Florida is recommended."},
+      {id:"County-Specific", name:"Summons - Eviction", req:true, expl:"Official notice to the tenant. The court sends this."},
+    ]
+  },
+  "eviction-tenant": {
+    name: "Eviction Defense (Tenant)", court: "County Court", fee: "$0 to respond",
+    diy: false,
+    forms: [
+      {id:"County-Specific", name:"Answer to Eviction Complaint", req:true, expl:"Your response to the eviction. Must file within 5 BUSINESS DAYS. Contact legal aid immediately."},
+    ],
+    urgent: true, urgent_msg: "⚠ You have only 5 business days to respond. Do not delay."
+  },
+  "small-claims": {
+    name: "Small Claims (up to $8,000)", court: "County Court", fee: "$55-$300",
+    diy: true, diy_interview: "Small Claims",
+    forms: [
+      {id:"7.331", name:"Statement of Claim (Goods Sold)", req:true, expl:"Someone bought goods from you and never paid."},
+      {id:"7.332", name:"Statement of Claim (Work Done)", req:false, expl:"You did work or provided materials and weren't paid."},
+      {id:"7.333", name:"Statement of Claim (Money Lent)", req:false, expl:"You lent money and they won't pay back."},
+      {id:"7.335", name:"Statement of Claim (Security Deposit)", req:false, expl:"Landlord kept your security deposit."},
+      {id:"7.340", name:"Summons/Notice to Appear", req:true, expl:"Official notice the court sends to the person you're suing."},
+    ]
+  },
+  "name-change-adult": {
+    name: "Adult Name Change", court: "Circuit Court", fee: "$414.00",
+    diy: false,
+    forms: [
+      {id:"12.982(a)", name:"Petition for Change of Name (Adult)", req:true, expl:"Asks the court to legally change your name. Requires fingerprinting and background check."},
+    ]
+  },
+  "probate-small-estate": {
+    name: "Small Estate (Summary Administration)", court: "Circuit Court", fee: "$232-$345",
+    diy: false,
+    forms: [
+      {id:"Probate-Summary", name:"Petition for Summary Administration", req:true, expl:"For estates under $75,000. Faster and cheaper than formal probate."},
+    ]
+  },
+  "expungement-sealing": {
+    name: "Expungement / Sealing", court: "Circuit/County Court", fee: "$42 + $75 FDLE",
+    diy: false,
+    forms: [
+      {id:"FDLE-Cert", name:"FDLE Certificate of Eligibility", req:true, expl:"FIRST STEP: Apply to FDLE. Takes 2-4 months. You cannot file in court without this."},
+      {id:"Seal-Petition", name:"Petition to Seal/Expunge", req:true, expl:"The formal court request. Attach the FDLE certificate."},
+    ]
+  },
+  "probate-full": {
+    name: "Formal Probate", court: "Circuit Court", fee: "$400.00",
+    diy: false,
+    forms: [
+      {id:"Probate-Formal", name:"Petition for Administration", req:true, expl:"Starts formal probate. Names a personal representative. Attorney strongly recommended."},
+    ]
+  },
+  "guardianship": {
+    name: "Guardianship", court: "Circuit Court", fee: "$400.00",
+    diy: false,
+    forms: [
+      {id:"Guardianship-Petition", name:"Petition for Guardianship", req:true, expl:"Asks the court to appoint a guardian. Requires background check. Attorney recommended."},
+    ]
+  },
+};
+
+const COUNTIES = ["Alachua","Baker","Bay","Bradford","Brevard","Broward","Calhoun","Charlotte","Citrus","Clay","Collier","Columbia","DeSoto","Dixie","Duval","Escambia","Flagler","Franklin","Gadsden","Gilchrist","Glades","Gulf","Hamilton","Hardee","Hendry","Hernando","Highlands","Hillsborough","Holmes","Indian River","Jackson","Jefferson","Lafayette","Lake","Lee","Leon","Levy","Liberty","Madison","Manatee","Marion","Martin","Miami-Dade","Monroe","Nassau","Okaloosa","Okeechobee","Orange","Osceola","Palm Beach","Pasco","Pinellas","Polk","Putnam","Santa Rosa","Sarasota","Seminole","St. Johns","St. Lucie","Sumter","Suwannee","Taylor","Union","Volusia","Wakulla","Walton","Washington"];
+
+// ── DECISION TREE ──
+const TREE = {
+  start: {
+    q: "What's your legal situation about?",
+    opts: [
+      {label:"Family or domestic matter", desc:"Divorce, kids, protection, support, name change", next:"family"},
+      {label:"Housing", desc:"Eviction, landlord/tenant dispute", next:"housing"},
+      {label:"Someone owes me money", desc:"Unpaid loans, goods, services, security deposit", next:"money"},
+      {label:"Estate, probate, or guardianship", desc:"After a death, or caring for someone", next:"estate"},
+      {label:"Criminal record", desc:"Expunge or seal a record", result:"expungement-sealing"},
+    ]
+  },
+  family: {
+    q: "What kind of family matter?",
+    opts: [
+      {label:"Divorce / ending a marriage", next:"divorce"},
+      {label:"Child custody or time-sharing", desc:"Unmarried parents", next:"custody"},
+      {label:"Change child support", desc:"Modify existing order", result:"child-support-modification"},
+      {label:"Protection from violence", desc:"Restraining order / injunction", result:"domestic-violence-injunction"},
+      {label:"Change my name", result:"name-change-adult"},
+    ]
+  },
+  divorce: {
+    q: "Do you have minor or dependent children with your spouse?",
+    opts: [
+      {label:"Yes", next:"divorce_kids"},
+      {label:"No", result:"divorce-without-children"},
+    ]
+  },
+  divorce_kids: {
+    q: "Is your divorce contested (do you disagree on things)?",
+    opts: [
+      {label:"Yes — we disagree", result:"divorce-with-children"},
+      {label:"No — we agree on everything", result:"divorce-with-children", note:"Since you agree, you can file a Marital Settlement Agreement to speed things up."},
+    ]
+  },
+  custody: {
+    q: "Is paternity (legal fatherhood) already established?",
+    opts: [
+      {label:"Yes", next:"custody_type"},
+      {label:"No — need to establish paternity", result:"child-custody-timesharing"},
+    ]
+  },
+  custody_type: {
+    q: "What do you need?",
+    opts: [
+      {label:"Set up time-sharing (custody) schedule", result:"child-custody-timesharing"},
+      {label:"Change existing custody order", result:"child-custody-timesharing"},
+    ]
+  },
+  housing: {
+    q: "Are you the landlord or the tenant?",
+    opts: [
+      {label:"I'm the landlord — need to evict a tenant", result:"eviction-landlord"},
+      {label:"I'm the tenant — being evicted or have a dispute", result:"eviction-tenant"},
+    ]
+  },
+  money: {
+    q: "What kind of money claim?",
+    opts: [
+      {label:"Someone bought goods and didn't pay", result:"small-claims"},
+      {label:"I did work and wasn't paid", result:"small-claims"},
+      {label:"I lent money and they won't repay", result:"small-claims"},
+      {label:"Landlord kept my security deposit", result:"small-claims"},
+      {label:"Other — under $8,000", result:"small-claims"},
+    ]
+  },
+  estate: {
+    q: "What do you need?",
+    opts: [
+      {label:"Handle a small estate (under $75K) after death", result:"probate-small-estate"},
+      {label:"Handle a larger estate (over $75K)", result:"probate-full"},
+      {label:"Become guardian for someone", result:"guardianship"},
+    ]
+  },
+};
+
+// ── STATE ──
+let currentNode = 'start';
+let currentCase = null;
+
+// ── RENDER ──
+function openFinder(node) {
+  currentNode = node;
+  currentCase = null;
+  document.getElementById('modal-overlay').classList.add('active');
+  renderNode(node);
+}
+
+function closeFinder() {
+  document.getElementById('modal-overlay').classList.remove('active');
+}
+
+function renderNode(nodeId) {
+  if (TREE[nodeId]) {
+    renderQuestion(nodeId);
+  }
+}
+
+function renderQuestion(nodeId) {
+  const node = TREE[nodeId];
+  let html = `<button class="back" onclick="goBack()">← Back</button>`;
+  html += `<h3>${node.q}</h3>`;
+  html += `<div class="options">`;
+  node.opts.forEach((opt, i) => {
+    html += `<button class="option" onclick="selectOption('${nodeId}', ${i})">`;
+    html += `<span class="opt-label">${opt.label}</span>`;
+    if (opt.desc) html += `<span class="opt-desc">${opt.desc}</span>`;
+    html += `</button>`;
+  });
+  html += `</div>`;
+  document.getElementById('modal-content').innerHTML = html;
+}
+
+let history = [];
+function selectOption(nodeId, idx) {
+  const opt = TREE[nodeId].opts[idx];
+  history.push(nodeId);
+  if (opt.result) {
+    showResult(opt.result, opt.note);
+  } else if (opt.next) {
+    currentNode = opt.next;
+    renderNode(opt.next);
+  }
+}
+
+function goBack() {
+  if (currentCase) {
+    currentCase = null;
+    currentNode = history.pop() || 'start';
+    renderNode(currentNode);
+  } else if (history.length > 0) {
+    currentNode = history.pop();
+    renderNode(currentNode);
+  } else {
+    closeFinder();
+  }
+}
+
+function showResult(caseId, note) {
+  currentCase = caseId;
+  const c = CASES[caseId];
+  if (!c) { document.getElementById('modal-content').innerHTML = '<p>Case not found.</p>'; return; }
+
+  let html = `<button class="back" onclick="goBack()">← Back to questions</button>`;
+  html += `<h3>📋 ${c.name}</h3>`;
+  html += `<p class="subtitle">${c.court} • Filing Fee: ${c.fee}</p>`;
+
+  if (note) html += `<p style="background:rgba(245,166,35,.1);color:var(--amber);padding:10px 14px;border-radius:8px;font-size:14px;margin-bottom:16px;">💡 ${note}</p>`;
+  if (c.urgent) html += `<p style="background:rgba(255,107,107,.1);color:var(--red);padding:10px 14px;border-radius:8px;font-size:14px;margin-bottom:16px;">${c.urgent_msg}</p>`;
+
+  if (c.diy) {
+    html += `<div style="background:rgba(0,210,160,.08);border:1px solid rgba(0,210,160,.2);padding:14px;border-radius:12px;margin-bottom:16px;">`;
+    html += `<strong style="color:var(--green);">⭐ DIY Florida is available!</strong><br>`;
+    html += `<span style="font-size:13px;color:var(--text2);">Interview: ${c.diy_interview} — auto-fills ALL forms and e-files directly.</span><br>`;
+    html += `<a href="https://www.myflcourtaccess.com" target="_blank" style="color:var(--green);font-size:13px;">Open DIY Florida →</a>`;
+    html += `</div>`;
+  }
+
+  html += `<div class="result-section"><h4>Forms You Need</h4><div class="form-list">`;
+  c.forms.forEach(f => {
+    html += `<div class="form-item">`;
+    html += `<span class="form-id">${f.id}</span>`;
+    if (f.req) html += `<span class="badge-required">Required</span>`;
+    else html += `<span style="font-size:10px;color:var(--text2);margin-left:8px;">Optional</span>`;
+    html += `<div class="form-name">${f.name}</div>`;
+    if (f.expl) html += `<div class="form-expl">→ ${f.expl}</div>`;
+    html += `</div>`;
+  });
+  html += `</div></div>`;
+
+  // County picker
+  html += `<div class="result-section"><h4>Your County</h4>`;
+  html += `<select id="county-pick" style="background:var(--surface);border:1px solid var(--border);color:var(--text);padding:10px 14px;border-radius:8px;width:100%;font-size:14px;font-family:var(--font);" onchange="showCountyInfo('${caseId}')">`;
+  html += `<option value="">Select your county...</option>`;
+  COUNTIES.forEach(c => html += `<option value="${c}">${c} County</option>`);
+  html += `</select>`;
+  html += `<div id="county-info" style="margin-top:8px;font-size:13px;color:var(--text2);"></div>`;
+  html += `</div>`;
+
+  // Links
+  html += `<div class="result-section"><h4>Official Sources</h4>`;
+  html += `<div class="link-row">`;
+  html += `<a href="https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms" target="_blank">Supreme Court Forms</a>`;
+  html += `<a href="https://help.flcourts.gov" target="_blank">Florida Courts Help</a>`;
+  html += `<a href="https://www.flcourts.gov/Services/Family-Courts/self-help-information/legal-aid" target="_blank">Free Legal Aid</a>`;
+  html += `<a href="https://florida.freelegalanswers.org/" target="_blank">Free Legal Answers</a>`;
+  html += `</div></div>`;
+
+  html += `<p style="font-size:12px;color:var(--text2);margin-top:16px;border-top:1px solid var(--border);padding-top:12px;">⚠ This is NOT legal advice. Forms and fees may change. Always verify with official sources.</p>`;
+
+  document.getElementById('modal-content').innerHTML = html;
+}
+
+function showCountyInfo(caseId) {
+  const county = document.getElementById('county-pick').value;
+  if (!county) { document.getElementById('county-info').innerHTML = ''; return; }
+
+  // Circuit lookup (simplified mapping)
+  const circuitMap = {
+    "Alachua":8,"Baker":8,"Bay":14,"Bradford":8,"Brevard":18,"Broward":17,"Calhoun":14,"Charlotte":20,"Citrus":5,"Clay":4,"Collier":20,"Columbia":3,"DeSoto":12,"Dixie":3,"Duval":4,"Escambia":1,"Flagler":7,"Franklin":2,"Gadsden":2,"Gilchrist":8,"Glades":20,"Gulf":14,"Hamilton":3,"Hardee":10,"Hendry":20,"Hernando":5,"Highlands":10,"Hillsborough":13,"Holmes":14,"Indian River":19,"Jackson":14,"Jefferson":2,"Lafayette":3,"Lake":5,"Lee":20,"Leon":2,"Levy":8,"Liberty":2,"Madison":3,"Manatee":12,"Marion":5,"Martin":19,"Miami-Dade":11,"Monroe":16,"Nassau":4,"Okaloosa":1,"Okeechobee":19,"Orange":9,"Osceola":9,"Palm Beach":15,"Pasco":6,"Pinellas":6,"Polk":10,"Putnam":7,"Santa Rosa":1,"Sarasota":12,"Seminole":18,"St. Johns":7,"St. Lucie":19,"Sumter":5,"Suwannee":3,"Taylor":3,"Union":8,"Volusia":7,"Wakulla":2,"Walton":1,"Washington":14
+  };
+  const circuit = circuitMap[county] || '?';
+  document.getElementById('county-info').innerHTML = `
+    <strong>${county} County</strong> — ${circuit}${['1','?'].includes(String(circuit)) ? 'st' : ['2','?'].includes(String(circuit)) ? 'nd' : ['3','?'].includes(String(circuit)) ? 'rd' : 'th'} Judicial Circuit<br>
+    <a href="https://www.flcourts.gov/Services/Family-Courts/self-help-information/self-help-programs" target="_blank">Find your Self-Help Center →</a>
+  `;
+}
+
+function scrollToSection(id) {
+  document.getElementById(id)?.scrollIntoView({behavior:'smooth'});
+}
+
+// Close modal on overlay click
+document.getElementById('modal-overlay').addEventListener('click', function(e) {
+  if (e.target === this) closeFinder();
+});
+
+// Keyboard: Escape to close
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeFinder();
+});
+</script>
+</body>
+</html>
