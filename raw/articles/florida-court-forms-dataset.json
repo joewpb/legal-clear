@@ -1,0 +1,1095 @@
+{
+  "meta": {
+    "name": "Florida Pro Se Court Forms Directory",
+    "version": "1.0.0",
+    "last_updated": "2026-05-28",
+    "description": "Comprehensive directory of Florida court forms for self-represented (pro se) litigants. Maps case types to official forms, DIY Florida availability, circuit courts, and county clerk resources.",
+    "disclaimer": "This is NOT legal advice. Forms and fees are subject to change. Always verify with the official source. Contact an attorney for legal advice.",
+    "data_sources": {
+      "supreme_court_forms": "https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms",
+      "diy_florida": "https://www.myflcourtaccess.com/authority/diy",
+      "self_help_directory": "https://www.flcourts.gov/Services/Family-Courts/self-help-information/self-help-programs",
+      "clerk_directory": "https://www.stateofflorida.com/clerks-of-court",
+      "circuit_courts": "https://www.flcourts.gov/Courts-System/Court-Structure"
+    }
+  },
+  "centralized_sources": {
+    "florida_courts_help": {
+      "name": "Florida Courts Help",
+      "url": "https://help.flcourts.gov",
+      "description": "Official self-help portal: form finder, legal terms, court process guides",
+      "has_form_finder": true,
+      "has_diy": true
+    },
+    "diy_florida": {
+      "name": "DIY Florida",
+      "url": "https://www.myflcourtaccess.com",
+      "description": "Free interactive form builder and e-filing. Access via the DIY tab after registering as Self-Represented Litigant.",
+      "areas": [
+        "Landlord Tenant Cases",
+        "Small Claims",
+        "Domestic Violence",
+        "Simplified Dissolution",
+        "Domestic Relations"
+      ],
+      "registration_required": true,
+      "cost": "Free (standard filing fees apply to e-file)"
+    },
+    "efiling_portal": {
+      "name": "Florida Courts E-Filing Portal",
+      "url": "https://www.myflcourtaccess.com",
+      "description": "Statewide e-filing system. All 67 counties accept e-filing through this portal.",
+      "pro_se_support": true
+    },
+    "family_law_forms": {
+      "name": "Florida Supreme Court Family Law Forms",
+      "url": "https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms",
+      "description": "All Supreme Court approved family law forms (12.900 series). Fillable PDFs. Free."
+    },
+    "small_claims_rules": {
+      "name": "Florida Small Claims Rules & Forms",
+      "url": "https://www.flcourts.gov/Courts-System/florida-courts-help/other-resources/small-claims",
+      "description": "Small claims rules and forms (7.300 series)."
+    },
+    "self_help_directory": {
+      "name": "Self-Help Center Directory",
+      "url": "https://www.flcourts.gov/Services/Family-Courts/self-help-information/self-help-programs",
+      "description": "Directory of physical self-help centers by judicial circuit. In-person assistance available."
+    },
+    "florida_bar_referral": {
+      "name": "Florida Bar Lawyer Referral Service",
+      "url": "https://www.floridabar.org/public/lrs/",
+      "description": "Find an attorney. Low-cost initial consultation ($25 for 30 minutes)."
+    },
+    "legal_aid": {
+      "name": "Florida Legal Aid Directory",
+      "url": "https://www.flcourts.gov/Services/Family-Courts/self-help-information/legal-aid",
+      "description": "Free and low-cost legal aid organizations by region."
+    },
+    "florida_law_help": {
+      "name": "Florida Law Help",
+      "url": "https://www.floridalawhelp.org/",
+      "description": "Free legal information and self-help resources."
+    },
+    "free_legal_answers": {
+      "name": "Florida Free Legal Answers",
+      "url": "https://florida.freelegalanswers.org/",
+      "description": "Ask a volunteer attorney a legal question online for free (income-eligible)."
+    }
+  },
+  "case_types": {
+    "divorce-with-children": {
+      "name": "Dissolution of Marriage with Children",
+      "description": "Divorce when you have minor or dependent children",
+      "court": "Circuit Court (Family Division)",
+      "filing_fee": "$408.00",
+      "diy_florida": false,
+      "forms": [
+        {
+          "form_id": "12.901(b)(1)",
+          "name": "Petition for Dissolution of Marriage with Dependent or Minor Child(ren)",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms",
+          "required": true
+        },
+        {
+          "form_id": "12.902(b)",
+          "name": "Family Law Financial Affidavit (Short Form - under $50K)",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms",
+          "required": true
+        },
+        {
+          "form_id": "12.902(c)",
+          "name": "Family Law Financial Affidavit (Long Form - over $50K)",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms",
+          "required": false
+        },
+        {
+          "form_id": "12.902(d)",
+          "name": "Uniform Child Custody Jurisdiction Act (UCCJEA) Affidavit",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms",
+          "required": true
+        },
+        {
+          "form_id": "12.902(e)",
+          "name": "Child Support Guidelines Worksheet",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms",
+          "required": true
+        },
+        {
+          "form_id": "12.902(f)(1)",
+          "name": "Marital Settlement Agreement with Children",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms",
+          "required": false
+        },
+        {
+          "form_id": "12.932",
+          "name": "Certificate of Compliance with Mandatory Disclosure",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms",
+          "required": true
+        },
+        {
+          "form_id": "12.990(b)(1)",
+          "name": "Final Judgment of Dissolution with Children (Uncontested)",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms",
+          "required": false
+        }
+      ]
+    },
+    "divorce-without-children": {
+      "name": "Dissolution of Marriage without Children",
+      "description": "Divorce when you have no minor children and no property disputes",
+      "court": "Circuit Court (Family Division)",
+      "filing_fee": "$408.00",
+      "diy_florida": true,
+      "diy_florida_interview": "Simplified Dissolution",
+      "forms": [
+        {
+          "form_id": "12.901(b)(2)",
+          "name": "Petition for Dissolution of Marriage with Property but No Children",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms",
+          "required": true
+        },
+        {
+          "form_id": "12.901(a)",
+          "name": "Petition for Simplified Dissolution of Marriage",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms",
+          "required": false
+        },
+        {
+          "form_id": "12.902(b)",
+          "name": "Family Law Financial Affidavit (Short Form)",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms",
+          "required": true
+        },
+        {
+          "form_id": "12.902(f)(2)",
+          "name": "Marital Settlement Agreement without Children",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms",
+          "required": false
+        },
+        {
+          "form_id": "12.990(a)",
+          "name": "Final Judgment of Dissolution (Uncontested)",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms",
+          "required": false
+        }
+      ]
+    },
+    "child-custody-timesharing": {
+      "name": "Child Custody / Time-Sharing (Paternity)",
+      "description": "Establish parental responsibility and time-sharing when parents are unmarried or paternity needs to be established",
+      "court": "Circuit Court (Family Division)",
+      "filing_fee": "$300.00",
+      "diy_florida": false,
+      "forms": [
+        {
+          "form_id": "12.983(a)",
+          "name": "Petition to Determine Paternity and Related Relief",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms",
+          "required": true
+        },
+        {
+          "form_id": "12.902(b)",
+          "name": "Family Law Financial Affidavit (Short Form)",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms",
+          "required": true
+        },
+        {
+          "form_id": "12.902(d)",
+          "name": "UCCJEA Affidavit",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms",
+          "required": true
+        },
+        {
+          "form_id": "12.902(e)",
+          "name": "Child Support Guidelines Worksheet",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms",
+          "required": true
+        },
+        {
+          "form_id": "12.995(a)",
+          "name": "Parenting Plan",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms",
+          "required": true
+        }
+      ]
+    },
+    "child-support-modification": {
+      "name": "Child Support Modification",
+      "description": "Change an existing child support order when circumstances have changed",
+      "court": "Circuit Court (Family Division) or DOR Administrative",
+      "filing_fee": "Varies ($0-$300 depending on method)",
+      "diy_florida": false,
+      "forms": [
+        {
+          "form_id": "12.905",
+          "name": "Supplemental Petition to Modify Child Support",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms",
+          "required": true
+        },
+        {
+          "form_id": "12.902(b)",
+          "name": "Family Law Financial Affidavit (Short Form)",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms",
+          "required": true
+        },
+        {
+          "form_id": "12.902(e)",
+          "name": "Child Support Guidelines Worksheet",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms",
+          "required": true
+        }
+      ]
+    },
+    "domestic-violence-injunction": {
+      "name": "Domestic Violence Injunction (Restraining Order)",
+      "description": "Protection against domestic, repeat, dating, or sexual violence",
+      "court": "Circuit Court",
+      "filing_fee": "$0 (no fee for protection injunctions)",
+      "diy_florida": true,
+      "diy_florida_interview": "Domestic Violence",
+      "forms": [
+        {
+          "form_id": "DV-1",
+          "name": "Petition for Injunction for Protection Against Domestic Violence",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/self-help-information",
+          "required": true
+        },
+        {
+          "form_id": "DV-2",
+          "name": "Petition for Injunction Against Repeat Violence",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/self-help-information",
+          "required": false
+        },
+        {
+          "form_id": "DV-3",
+          "name": "Petition for Injunction Against Dating Violence",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/self-help-information",
+          "required": false
+        },
+        {
+          "form_id": "DV-4",
+          "name": "Petition for Injunction Against Sexual Violence",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/self-help-information",
+          "required": false
+        },
+        {
+          "form_id": "12.902(c)",
+          "name": "Request for Confidential Filing of Address",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/self-help-information",
+          "required": false
+        }
+      ]
+    },
+    "eviction-landlord": {
+      "name": "Eviction - Landlord (Removal of Tenant)",
+      "description": "Landlord seeking to remove a tenant for nonpayment or lease violation",
+      "court": "County Court",
+      "filing_fee": "$185-$300 (varies by county)",
+      "diy_florida": true,
+      "diy_florida_interview": "Landlord Tenant Cases",
+      "forms": [
+        {
+          "form_id": "County-Specific",
+          "name": "Complaint for Eviction (varies by county)",
+          "url": "https://www.myflcourtaccess.com",
+          "required": true
+        },
+        {
+          "form_id": "County-Specific",
+          "name": "Summons - Eviction",
+          "url": "https://www.myflcourtaccess.com",
+          "required": true
+        },
+        {
+          "form_id": "County-Specific",
+          "name": "Writ of Possession",
+          "url": "https://www.myflcourtaccess.com",
+          "required": false
+        }
+      ],
+      "note": "DIY Florida recommended - handles all forms automatically"
+    },
+    "eviction-tenant": {
+      "name": "Eviction - Tenant Defense",
+      "description": "Tenant responding to an eviction or asserting rights",
+      "court": "County Court",
+      "filing_fee": "$0 to file answer (deposit for rent may be required)",
+      "diy_florida": false,
+      "forms": [
+        {
+          "form_id": "County-Specific",
+          "name": "Answer / Response to Eviction Complaint",
+          "url": "https://www.myflcourtaccess.com",
+          "required": true
+        },
+        {
+          "form_id": "County-Specific",
+          "name": "Motion to Determine Rent",
+          "url": "https://www.myflcourtaccess.com",
+          "required": false
+        }
+      ],
+      "note": "Must file answer within 5 business days. Contact local legal aid if possible."
+    },
+    "small-claims": {
+      "name": "Small Claims (up to $8,000)",
+      "description": "Sue for money owed: unpaid loans, damages, security deposits, goods/services",
+      "court": "County Court",
+      "filing_fee": "$55-$300 (varies by claim amount and county)",
+      "diy_florida": true,
+      "diy_florida_interview": "Small Claims",
+      "forms": [
+        {
+          "form_id": "7.330",
+          "name": "Statement of Claim (Auto Negligence)",
+          "url": "https://www.flcourts.gov/Courts-System/florida-courts-help/other-resources/small-claims",
+          "required": false
+        },
+        {
+          "form_id": "7.331",
+          "name": "Statement of Claim (Goods Sold)",
+          "url": "https://www.flcourts.gov/Courts-System/florida-courts-help/other-resources/small-claims",
+          "required": false
+        },
+        {
+          "form_id": "7.332",
+          "name": "Statement of Claim (Work Done/Materials)",
+          "url": "https://www.flcourts.gov/Courts-System/florida-courts-help/other-resources/small-claims",
+          "required": false
+        },
+        {
+          "form_id": "7.333",
+          "name": "Statement of Claim (Money Lent)",
+          "url": "https://www.flcourts.gov/Courts-System/florida-courts-help/other-resources/small-claims",
+          "required": false
+        },
+        {
+          "form_id": "7.334",
+          "name": "Statement of Claim (Promissory Note)",
+          "url": "https://www.flcourts.gov/Courts-System/florida-courts-help/other-resources/small-claims",
+          "required": false
+        },
+        {
+          "form_id": "7.335",
+          "name": "Statement of Claim (Return of Security Deposit)",
+          "url": "https://www.flcourts.gov/Courts-System/florida-courts-help/other-resources/small-claims",
+          "required": false
+        },
+        {
+          "form_id": "7.340",
+          "name": "Summons/Notice to Appear",
+          "url": "https://www.flcourts.gov/Courts-System/florida-courts-help/other-resources/small-claims",
+          "required": true
+        },
+        {
+          "form_id": "7.343",
+          "name": "Fact Information Sheet (for judgment enforcement)",
+          "url": "https://www.flcourts.gov/Courts-System/florida-courts-help/other-resources/small-claims",
+          "required": false
+        }
+      ],
+      "note": "DIY Florida highly recommended - it handles statement of claim type selection automatically"
+    },
+    "name-change-adult": {
+      "name": "Adult Name Change",
+      "description": "Legally change your name",
+      "court": "Circuit Court",
+      "filing_fee": "$414.00",
+      "diy_florida": false,
+      "forms": [
+        {
+          "form_id": "12.982(a)",
+          "name": "Petition for Change of Name (Adult)",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms",
+          "required": true
+        },
+        {
+          "form_id": "12.982(d)",
+          "name": "Final Judgment of Change of Name (Adult)",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms",
+          "required": false
+        },
+        {
+          "form_id": "County-Specific",
+          "name": "FDLE Fingerprint Card",
+          "url": "https://www.flcourts.gov/Services/Family-Courts/self-help-information",
+          "required": true
+        }
+      ],
+      "note": "Requires fingerprinting and background check. Some counties have local name change packets."
+    },
+    "probate-small-estate": {
+      "name": "Small Estate Administration (Summary Administration)",
+      "description": "Handle a small estate (under $75,000) without full probate",
+      "court": "Circuit Court (Probate Division)",
+      "filing_fee": "$232-$345 (varies by county)",
+      "diy_florida": false,
+      "forms": [
+        {
+          "form_id": "Probate-County",
+          "name": "Petition for Summary Administration",
+          "url": "https://www.flcourts.gov/Courts-System/florida-courts-help/other-resources",
+          "required": true
+        },
+        {
+          "form_id": "Probate-County",
+          "name": "Petition to Determine Homestead Status",
+          "url": "https://www.flcourts.gov/Courts-System/florida-courts-help/other-resources",
+          "required": false
+        }
+      ],
+      "note": "Probate forms vary significantly by county. Contact the local clerk's probate division for county-specific forms. Most clerks have probate packets."
+    },
+    "probate-full": {
+      "name": "Formal Probate Administration",
+      "description": "Full probate for estates over $75,000 or with complex assets",
+      "court": "Circuit Court (Probate Division)",
+      "filing_fee": "$400.00",
+      "diy_florida": false,
+      "forms": [
+        {
+          "form_id": "Probate-County",
+          "name": "Petition for Administration",
+          "url": "https://www.flcourts.gov/Courts-System/florida-courts-help/other-resources",
+          "required": true
+        },
+        {
+          "form_id": "Probate-County",
+          "name": "Oath of Personal Representative",
+          "url": "https://www.flcourts.gov/Courts-System/florida-courts-help/other-resources",
+          "required": true
+        },
+        {
+          "form_id": "Probate-County",
+          "name": "Letters of Administration",
+          "url": "https://www.flcourts.gov/Courts-System/florida-courts-help/other-resources",
+          "required": true
+        }
+      ],
+      "note": "Formal probate is complex. An attorney is strongly recommended for full administration."
+    },
+    "guardianship": {
+      "name": "Guardianship (Adult or Minor)",
+      "description": "Establish legal guardianship over an incapacitated adult or minor child",
+      "court": "Circuit Court (Probate/Guardianship Division)",
+      "filing_fee": "$400.00",
+      "diy_florida": false,
+      "forms": [
+        {
+          "form_id": "Guardianship-County",
+          "name": "Petition for Appointment of Guardian",
+          "url": "https://www.flcourts.gov/Courts-System/florida-courts-help/other-resources",
+          "required": true
+        },
+        {
+          "form_id": "Guardianship-County",
+          "name": "Application for Appointment as Guardian",
+          "url": "https://www.flcourts.gov/Courts-System/florida-courts-help/other-resources",
+          "required": true
+        },
+        {
+          "form_id": "Guardianship-County",
+          "name": "Guardianship Plan",
+          "url": "https://www.flcourts.gov/Courts-System/florida-courts-help/other-resources",
+          "required": true
+        }
+      ],
+      "note": "Guardianship is complex. Requires background check, credit check, and possible education requirements. Attorney recommended."
+    },
+    "expungement-sealing": {
+      "name": "Expungement / Sealing of Criminal Record",
+      "description": "Seal or expunge a criminal record",
+      "court": "Circuit Court or County Court (where case was filed)",
+      "filing_fee": "$42.00 (sealing fee) + $75.00 FDLE fee",
+      "diy_florida": false,
+      "forms": [
+        {
+          "form_id": "FDLE-Form",
+          "name": "FDLE Application for Certificate of Eligibility",
+          "url": "https://www.fdle.state.fl.us/Seal-and-Expunge-Process/Seal-and-Expunge-Home",
+          "required": true
+        },
+        {
+          "form_id": "County-Specific",
+          "name": "Petition to Seal/Expunge",
+          "url": "https://www.flcourts.gov/Courts-System/florida-courts-help/other-resources",
+          "required": true
+        },
+        {
+          "form_id": "County-Specific",
+          "name": "Affidavit in Support",
+          "url": "https://www.flcourts.gov/Courts-System/florida-courts-help/other-resources",
+          "required": true
+        }
+      ],
+      "note": "Must first get FDLE Certificate of Eligibility. Only certain dispositions qualify."
+    }
+  },
+  "circuits": [
+    {
+      "id": 1,
+      "name": "First Judicial Circuit",
+      "counties": [
+        "Escambia",
+        "Okaloosa",
+        "Santa Rosa",
+        "Walton"
+      ],
+      "url": "https://www.jud1.flcourts.org",
+      "self_help_url": "https://www.jud1.flcourts.org/self-help"
+    },
+    {
+      "id": 2,
+      "name": "Second Judicial Circuit",
+      "counties": [
+        "Franklin",
+        "Gadsden",
+        "Jefferson",
+        "Leon",
+        "Liberty",
+        "Wakulla"
+      ],
+      "url": "https://www.jud2.flcourts.org",
+      "self_help_url": "https://www.jud2.flcourts.org/self-help"
+    },
+    {
+      "id": 3,
+      "name": "Third Judicial Circuit",
+      "counties": [
+        "Columbia",
+        "Dixie",
+        "Hamilton",
+        "Lafayette",
+        "Madison",
+        "Suwannee",
+        "Taylor"
+      ],
+      "url": "https://www.jud3.flcourts.org",
+      "self_help_url": "https://www.jud3.flcourts.org/self-help"
+    },
+    {
+      "id": 4,
+      "name": "Fourth Judicial Circuit",
+      "counties": [
+        "Clay",
+        "Duval",
+        "Nassau"
+      ],
+      "url": "https://www.jud4.org",
+      "self_help_url": "https://www.jud4.org/self-help"
+    },
+    {
+      "id": 5,
+      "name": "Fifth Judicial Circuit",
+      "counties": [
+        "Citrus",
+        "Hernando",
+        "Lake",
+        "Marion",
+        "Sumter"
+      ],
+      "url": "https://www.circuit5.org",
+      "self_help_url": "https://www.circuit5.org/self-help-center"
+    },
+    {
+      "id": 6,
+      "name": "Sixth Judicial Circuit",
+      "counties": [
+        "Pasco",
+        "Pinellas"
+      ],
+      "url": "https://www.jud6.flcourts.org",
+      "self_help_url": "https://www.jud6.flcourts.org/self-help"
+    },
+    {
+      "id": 7,
+      "name": "Seventh Judicial Circuit",
+      "counties": [
+        "Flagler",
+        "Putnam",
+        "St. Johns",
+        "Volusia"
+      ],
+      "url": "https://www.circuit7.org",
+      "self_help_url": "https://www.circuit7.org/family-court-services"
+    },
+    {
+      "id": 8,
+      "name": "Eighth Judicial Circuit",
+      "counties": [
+        "Alachua",
+        "Baker",
+        "Bradford",
+        "Gilchrist",
+        "Levy",
+        "Union"
+      ],
+      "url": "https://www.circuit8.org",
+      "self_help_url": "https://circuit8.org/self-help"
+    },
+    {
+      "id": 9,
+      "name": "Ninth Judicial Circuit",
+      "counties": [
+        "Orange",
+        "Osceola"
+      ],
+      "url": "https://www.ninthcircuit.org",
+      "self_help_url": "https://ninthcircuit.org/self-help"
+    },
+    {
+      "id": 10,
+      "name": "Tenth Judicial Circuit",
+      "counties": [
+        "Hardee",
+        "Highlands",
+        "Polk"
+      ],
+      "url": "https://www.jud10.flcourts.org",
+      "self_help_url": "https://www.jud10.flcourts.org/self-help-pro-se"
+    },
+    {
+      "id": 11,
+      "name": "Eleventh Judicial Circuit",
+      "counties": [
+        "Miami-Dade"
+      ],
+      "url": "https://www.jud11.flcourts.org",
+      "self_help_url": "https://www.jud11.flcourts.org/Family-Court-Self-Help-Packets-and-Forms"
+    },
+    {
+      "id": 12,
+      "name": "Twelfth Judicial Circuit",
+      "counties": [
+        "DeSoto",
+        "Manatee",
+        "Sarasota"
+      ],
+      "url": "https://www.jud12.flcourts.org",
+      "self_help_url": "https://www.jud12.flcourts.org/About/Divisions/Family/Pro-Se-Forms-Instructions"
+    },
+    {
+      "id": 13,
+      "name": "Thirteenth Judicial Circuit",
+      "counties": [
+        "Hillsborough"
+      ],
+      "url": "https://www.fljud13.org",
+      "self_help_url": "https://www.fljud13.org/SelfHelp.aspx"
+    },
+    {
+      "id": 14,
+      "name": "Fourteenth Judicial Circuit",
+      "counties": [
+        "Bay",
+        "Calhoun",
+        "Gulf",
+        "Holmes",
+        "Jackson",
+        "Washington"
+      ],
+      "url": "https://www.jud14.flcourts.org",
+      "self_help_url": "https://www.jud14.flcourts.org/self-help"
+    },
+    {
+      "id": 15,
+      "name": "Fifteenth Judicial Circuit",
+      "counties": [
+        "Palm Beach"
+      ],
+      "url": "https://www.15thcircuit.com",
+      "self_help_url": "https://www.15thcircuit.com/self-help"
+    },
+    {
+      "id": 16,
+      "name": "Sixteenth Judicial Circuit",
+      "counties": [
+        "Monroe"
+      ],
+      "url": "https://www.jud16.flcourts.org",
+      "self_help_url": "https://www.jud16.flcourts.org/self-help"
+    },
+    {
+      "id": 17,
+      "name": "Seventeenth Judicial Circuit",
+      "counties": [
+        "Broward"
+      ],
+      "url": "https://www.17th.flcourts.org",
+      "self_help_url": "https://www.17th.flcourts.org/self-help"
+    },
+    {
+      "id": 18,
+      "name": "Eighteenth Judicial Circuit",
+      "counties": [
+        "Brevard",
+        "Seminole"
+      ],
+      "url": "https://www.flcourts18.org",
+      "self_help_url": "https://www.flcourts18.org/self-help"
+    },
+    {
+      "id": 19,
+      "name": "Nineteenth Judicial Circuit",
+      "counties": [
+        "Indian River",
+        "Martin",
+        "Okeechobee",
+        "St. Lucie"
+      ],
+      "url": "https://www.circuit19.org",
+      "self_help_url": "https://www.circuit19.org/forms-and-checklists"
+    },
+    {
+      "id": 20,
+      "name": "Twentieth Judicial Circuit",
+      "counties": [
+        "Charlotte",
+        "Collier",
+        "Glades",
+        "Hendry",
+        "Lee"
+      ],
+      "url": "https://www.jud20.flcourts.org",
+      "self_help_url": "https://www.jud20.flcourts.org/self-help"
+    }
+  ],
+  "counties": [
+    {
+      "county": "Alachua",
+      "clerk_url": "https://www.alachuacounty.us/depts/clerk/Pages/Clerk.aspx",
+      "forms_url": "https://www.alachuacounty.us/depts/clerk/Pages/Clerk.aspx"
+    },
+    {
+      "county": "Baker",
+      "clerk_url": "https://bakercountyfl.org/clerk/",
+      "forms_url": "https://bakercountyfl.org/clerk/"
+    },
+    {
+      "county": "Bay",
+      "clerk_url": "https://baycoclerk.com/",
+      "forms_url": "https://baycoclerk.com/"
+    },
+    {
+      "county": "Bradford",
+      "clerk_url": "https://bradfordclerk.com/",
+      "forms_url": "https://bradfordclerk.com/"
+    },
+    {
+      "county": "Brevard",
+      "clerk_url": "https://brevardclerk.us/",
+      "forms_url": "https://brevardclerk.us/"
+    },
+    {
+      "county": "Broward",
+      "clerk_url": "https://www.browardclerk.org",
+      "forms_url": "https://www.browardclerk.org/GeneralInformation/eFILING"
+    },
+    {
+      "county": "Calhoun",
+      "clerk_url": "https://www.calhounclerk.com/",
+      "forms_url": "https://www.calhounclerk.com/"
+    },
+    {
+      "county": "Charlotte",
+      "clerk_url": "https://charlotteclerk.com/",
+      "forms_url": "https://charlotteclerk.com/"
+    },
+    {
+      "county": "Citrus",
+      "clerk_url": "https://www.citrusclerk.org/",
+      "forms_url": "https://www.citrusclerk.org/"
+    },
+    {
+      "county": "Clay",
+      "clerk_url": "https://www.clayclerk.com/",
+      "forms_url": "https://www.clayclerk.com/"
+    },
+    {
+      "county": "Collier",
+      "clerk_url": "https://www.collierclerk.com/",
+      "forms_url": "https://www.collierclerk.com/"
+    },
+    {
+      "county": "Columbia",
+      "clerk_url": "https://www.columbiaclerk.com/",
+      "forms_url": "https://www.columbiaclerk.com/"
+    },
+    {
+      "county": "DeSoto",
+      "clerk_url": "https://www.desotoclerk.com/",
+      "forms_url": "https://www.desotoclerk.com/"
+    },
+    {
+      "county": "Dixie",
+      "clerk_url": "https://www.dixieclerk.com/",
+      "forms_url": "https://www.dixieclerk.com/"
+    },
+    {
+      "county": "Duval",
+      "clerk_url": "https://www.duvalclerk.com/",
+      "forms_url": "https://www.duvalclerk.com/"
+    },
+    {
+      "county": "Escambia",
+      "clerk_url": "https://www.escambiaclerk.com/",
+      "forms_url": "https://www.escambiaclerk.com/clerk/index.aspx"
+    },
+    {
+      "county": "Flagler",
+      "clerk_url": "https://flaglerclerk.com/",
+      "forms_url": "https://flaglerclerk.com/"
+    },
+    {
+      "county": "Franklin",
+      "clerk_url": "https://www.franklinclerk.com/",
+      "forms_url": "https://www.franklinclerk.com/"
+    },
+    {
+      "county": "Gadsden",
+      "clerk_url": "https://www.gadsdenclerk.com/",
+      "forms_url": "https://www.gadsdenclerk.com/"
+    },
+    {
+      "county": "Gilchrist",
+      "clerk_url": "https://www.gilchristclerk.com",
+      "forms_url": "https://www.gilchristclerk.com"
+    },
+    {
+      "county": "Glades",
+      "clerk_url": "https://www.gladesclerk.com/",
+      "forms_url": "https://www.gladesclerk.com/"
+    },
+    {
+      "county": "Gulf",
+      "clerk_url": "https://gulfclerk.com/",
+      "forms_url": "https://gulfclerk.com/"
+    },
+    {
+      "county": "Hamilton",
+      "clerk_url": "https://www.courtclerk.org/",
+      "forms_url": "https://www.courtclerk.org/"
+    },
+    {
+      "county": "Hardee",
+      "clerk_url": "https://www.hardeeclerk.com/",
+      "forms_url": "https://www.hardeeclerk.com/"
+    },
+    {
+      "county": "Hendry",
+      "clerk_url": "https://www.hendryclerk.org/",
+      "forms_url": "https://www.hendryclerk.org/"
+    },
+    {
+      "county": "Hernando",
+      "clerk_url": "https://hernandoclerk.com/",
+      "forms_url": "https://hernandoclerk.com/"
+    },
+    {
+      "county": "Highlands",
+      "clerk_url": "https://highlandsclerkfl.gov/",
+      "forms_url": "https://highlandsclerkfl.gov/"
+    },
+    {
+      "county": "Hillsborough",
+      "clerk_url": "https://www.hillsclerk.com",
+      "forms_url": "https://www.hillsclerk.com"
+    },
+    {
+      "county": "Holmes",
+      "clerk_url": "https://www.holmesclerk.com/",
+      "forms_url": "https://www.holmesclerk.com/"
+    },
+    {
+      "county": "Indian River",
+      "clerk_url": "https://www.clerk.indian-river.org/",
+      "forms_url": "https://www.clerk.indian-river.org/"
+    },
+    {
+      "county": "Jackson",
+      "clerk_url": "https://www.jacksonclerk.com/",
+      "forms_url": "https://www.jacksonclerk.com/"
+    },
+    {
+      "county": "Jefferson",
+      "clerk_url": "https://www.jeffersonclerk.com/",
+      "forms_url": "https://www.jeffersonclerk.com/"
+    },
+    {
+      "county": "Lafayette",
+      "clerk_url": "https://www.lafayetteclerk.com/",
+      "forms_url": "https://www.lafayetteclerk.com/"
+    },
+    {
+      "county": "Lake",
+      "clerk_url": "https://www.lakecountyclerk.org/",
+      "forms_url": "https://www.lakecountyclerk.org/default.aspx"
+    },
+    {
+      "county": "Lee",
+      "clerk_url": "https://www.leeclerk.org",
+      "forms_url": "https://www.leeclerk.org"
+    },
+    {
+      "county": "Leon",
+      "clerk_url": "https://www.leonclerk.com/",
+      "forms_url": "https://www.leonclerk.com/"
+    },
+    {
+      "county": "Levy",
+      "clerk_url": "https://levyclerk.com/",
+      "forms_url": "https://levyclerk.com/departments-services/court-services/online-forms"
+    },
+    {
+      "county": "Liberty",
+      "clerk_url": "https://www.libertyclerk.com/",
+      "forms_url": "https://www.libertyclerk.com/"
+    },
+    {
+      "county": "Madison",
+      "clerk_url": "https://www.madisonclerk.com/",
+      "forms_url": "https://www.madisonclerk.com/"
+    },
+    {
+      "county": "Manatee",
+      "clerk_url": "https://www.manateeclerk.com/",
+      "forms_url": "https://www.manateeclerk.com/"
+    },
+    {
+      "county": "Marion",
+      "clerk_url": "https://www.marioncountyclerk.org/",
+      "forms_url": "https://www.marioncountyclerk.org/"
+    },
+    {
+      "county": "Martin",
+      "clerk_url": "https://www.martinclerk.com/",
+      "forms_url": "https://www.martinclerk.com/"
+    },
+    {
+      "county": "Miami-Dade",
+      "clerk_url": "https://www.miamidadeclerk.gov/",
+      "forms_url": "https://www.miamidadeclerk.gov/clerk/e-filing.page"
+    },
+    {
+      "county": "Monroe",
+      "clerk_url": "https://www.monroeclerk.com/",
+      "forms_url": "https://www.monroeclerk.com/"
+    },
+    {
+      "county": "Nassau",
+      "clerk_url": "https://www.nassauclerk.com/",
+      "forms_url": "https://www.nassauclerk.com/"
+    },
+    {
+      "county": "Okaloosa",
+      "clerk_url": "https://www.okaloosaclerk.com/",
+      "forms_url": "https://www.okaloosaclerk.com/"
+    },
+    {
+      "county": "Okeechobee",
+      "clerk_url": "https://www.okeechobeeclerk.com/",
+      "forms_url": "https://www.okeechobeeclerk.com/"
+    },
+    {
+      "county": "Orange",
+      "clerk_url": "https://www.myorangeclerk.com/",
+      "forms_url": "https://www.myorangeclerk.com/"
+    },
+    {
+      "county": "Osceola",
+      "clerk_url": "https://www.osceolaclerk.com/",
+      "forms_url": "https://www.osceolaclerk.com/"
+    },
+    {
+      "county": "Palm Beach",
+      "clerk_url": "https://www.mypalmbeachclerk.com/",
+      "forms_url": "https://www.mypalmbeachclerk.com/services/forms-library/forms-a-z"
+    },
+    {
+      "county": "Pasco",
+      "clerk_url": "https://www.pascoclerk.com",
+      "forms_url": "https://www.pascoclerk.com/330/Legal-Resource-Center"
+    },
+    {
+      "county": "Pinellas",
+      "clerk_url": "https://www.mypinellasclerk.gov/",
+      "forms_url": "https://www.mypinellasclerk.gov/Forms"
+    },
+    {
+      "county": "Polk",
+      "clerk_url": "https://www.polkcountyclerk.net/",
+      "forms_url": "https://www.polkcountyclerk.net/"
+    },
+    {
+      "county": "Putnam",
+      "clerk_url": "https://www.putnamclerkfl.com/",
+      "forms_url": "https://www.putnamclerkfl.com/"
+    },
+    {
+      "county": "Santa Rosa",
+      "clerk_url": "https://www.santarosaclerk.com/",
+      "forms_url": "https://www.santarosaclerk.com/"
+    },
+    {
+      "county": "Sarasota",
+      "clerk_url": "https://www.sarasotaclerk.com/",
+      "forms_url": "https://www.sarasotaclerk.com/"
+    },
+    {
+      "county": "Seminole",
+      "clerk_url": "https://www.seminoleclerk.org/",
+      "forms_url": "https://www.seminoleclerk.org/"
+    },
+    {
+      "county": "St. Johns",
+      "clerk_url": "https://www.stjohnsclerk.com/",
+      "forms_url": "https://www.stjohnsclerk.com/"
+    },
+    {
+      "county": "St. Lucie",
+      "clerk_url": "https://www.stlucieclerk.com/",
+      "forms_url": "https://www.stlucieclerk.com/"
+    },
+    {
+      "county": "Sumter",
+      "clerk_url": "https://www.sumterclerk.com/",
+      "forms_url": "https://www.sumterclerk.com/"
+    },
+    {
+      "county": "Suwannee",
+      "clerk_url": "https://www.suwanneeclerk.com/",
+      "forms_url": "https://www.suwanneeclerk.com/"
+    },
+    {
+      "county": "Taylor",
+      "clerk_url": "https://www.taylorclerk.com/",
+      "forms_url": "https://www.taylorclerk.com/"
+    },
+    {
+      "county": "Union",
+      "clerk_url": "https://www.unionclerk.com/",
+      "forms_url": "https://www.unionclerk.com/"
+    },
+    {
+      "county": "Volusia",
+      "clerk_url": "https://www.clerk.org/",
+      "forms_url": "https://www.clerk.org/forms.aspx"
+    },
+    {
+      "county": "Wakulla",
+      "clerk_url": "https://www.wakullaclerk.com/",
+      "forms_url": "https://www.wakullaclerk.com/"
+    },
+    {
+      "county": "Walton",
+      "clerk_url": "https://waltonclerkfl.gov/",
+      "forms_url": "https://waltonclerkfl.gov/"
+    },
+    {
+      "county": "Washington",
+      "clerk_url": "https://www.washingtonclerk.com/",
+      "forms_url": "https://www.washingtonclerk.com/"
+    }
+  ]
+}
