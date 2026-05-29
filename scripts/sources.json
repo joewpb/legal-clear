@@ -1,0 +1,713 @@
+[
+  {
+    "county": "STATE",
+    "entry_urls": [
+      "https://help.flcourts.gov"
+    ]
+  },
+  {
+    "county": "STATE",
+    "entry_urls": [
+      "https://www.myflcourtaccess.com"
+    ]
+  },
+  {
+    "county": "STATE",
+    "entry_urls": [
+      "https://www.myflcourtaccess.com"
+    ]
+  },
+  {
+    "county": "STATE",
+    "entry_urls": [
+      "https://www.flcourts.gov/Services/Family-Courts/domestic-relations-court-resources/family-law-forms"
+    ]
+  },
+  {
+    "county": "STATE",
+    "entry_urls": [
+      "https://www.flcourts.gov/Courts-System/florida-courts-help/other-resources/small-claims"
+    ]
+  },
+  {
+    "county": "STATE",
+    "entry_urls": [
+      "https://www.flcourts.gov/Services/Family-Courts/self-help-information/self-help-programs"
+    ]
+  },
+  {
+    "county": "STATE",
+    "entry_urls": [
+      "https://www.floridabar.org/public/lrs/"
+    ]
+  },
+  {
+    "county": "STATE",
+    "entry_urls": [
+      "https://www.flcourts.gov/Services/Family-Courts/self-help-information/legal-aid"
+    ]
+  },
+  {
+    "county": "STATE",
+    "entry_urls": [
+      "https://www.floridalawhelp.org/"
+    ]
+  },
+  {
+    "county": "STATE",
+    "entry_urls": [
+      "https://florida.freelegalanswers.org/"
+    ]
+  },
+  {
+    "county": "Alachua",
+    "entry_urls": [
+      "https://www.alachuacounty.us/depts/clerk/Pages/Clerk.aspx"
+    ]
+  },
+  {
+    "county": "Baker",
+    "entry_urls": [
+      "https://bakercountyfl.org/clerk/"
+    ]
+  },
+  {
+    "county": "Bay",
+    "entry_urls": [
+      "https://baycoclerk.com/"
+    ]
+  },
+  {
+    "county": "Bradford",
+    "entry_urls": [
+      "https://bradfordclerk.com/"
+    ]
+  },
+  {
+    "county": "Brevard",
+    "entry_urls": [
+      "https://brevardclerk.us/"
+    ]
+  },
+  {
+    "county": "Broward",
+    "entry_urls": [
+      "https://www.browardclerk.org",
+      "https://www.browardclerk.org/GeneralInformation/eFILING"
+    ]
+  },
+  {
+    "county": "Calhoun",
+    "entry_urls": [
+      "https://www.calhounclerk.com/"
+    ]
+  },
+  {
+    "county": "Charlotte",
+    "entry_urls": [
+      "https://charlotteclerk.com/"
+    ]
+  },
+  {
+    "county": "Citrus",
+    "entry_urls": [
+      "https://www.citrusclerk.org/"
+    ]
+  },
+  {
+    "county": "Clay",
+    "entry_urls": [
+      "https://www.clayclerk.com/"
+    ]
+  },
+  {
+    "county": "Collier",
+    "entry_urls": [
+      "https://www.collierclerk.com/"
+    ]
+  },
+  {
+    "county": "Columbia",
+    "entry_urls": [
+      "https://www.columbiaclerk.com/"
+    ]
+  },
+  {
+    "county": "DeSoto",
+    "entry_urls": [
+      "https://www.desotoclerk.com/"
+    ]
+  },
+  {
+    "county": "Dixie",
+    "entry_urls": [
+      "https://www.dixieclerk.com/"
+    ]
+  },
+  {
+    "county": "Duval",
+    "entry_urls": [
+      "https://www.duvalclerk.com/"
+    ]
+  },
+  {
+    "county": "Escambia",
+    "entry_urls": [
+      "https://www.escambiaclerk.com/clerk/index.aspx",
+      "https://www.escambiaclerk.com/"
+    ]
+  },
+  {
+    "county": "Flagler",
+    "entry_urls": [
+      "https://flaglerclerk.com/"
+    ]
+  },
+  {
+    "county": "Franklin",
+    "entry_urls": [
+      "https://www.franklinclerk.com/"
+    ]
+  },
+  {
+    "county": "Gadsden",
+    "entry_urls": [
+      "https://www.gadsdenclerk.com/"
+    ]
+  },
+  {
+    "county": "Gilchrist",
+    "entry_urls": [
+      "https://www.gilchristclerk.com"
+    ]
+  },
+  {
+    "county": "Glades",
+    "entry_urls": [
+      "https://www.gladesclerk.com/"
+    ]
+  },
+  {
+    "county": "Gulf",
+    "entry_urls": [
+      "https://gulfclerk.com/"
+    ]
+  },
+  {
+    "county": "Hamilton",
+    "entry_urls": [
+      "https://www.courtclerk.org/"
+    ]
+  },
+  {
+    "county": "Hardee",
+    "entry_urls": [
+      "https://www.hardeeclerk.com/"
+    ]
+  },
+  {
+    "county": "Hendry",
+    "entry_urls": [
+      "https://www.hendryclerk.org/"
+    ]
+  },
+  {
+    "county": "Hernando",
+    "entry_urls": [
+      "https://hernandoclerk.com/"
+    ]
+  },
+  {
+    "county": "Highlands",
+    "entry_urls": [
+      "https://highlandsclerkfl.gov/"
+    ]
+  },
+  {
+    "county": "Hillsborough",
+    "entry_urls": [
+      "https://www.hillsclerk.com"
+    ]
+  },
+  {
+    "county": "Holmes",
+    "entry_urls": [
+      "https://www.holmesclerk.com/"
+    ]
+  },
+  {
+    "county": "Indian River",
+    "entry_urls": [
+      "https://www.clerk.indian-river.org/"
+    ]
+  },
+  {
+    "county": "Jackson",
+    "entry_urls": [
+      "https://www.jacksonclerk.com/"
+    ]
+  },
+  {
+    "county": "Jefferson",
+    "entry_urls": [
+      "https://www.jeffersonclerk.com/"
+    ]
+  },
+  {
+    "county": "Lafayette",
+    "entry_urls": [
+      "https://www.lafayetteclerk.com/"
+    ]
+  },
+  {
+    "county": "Lake",
+    "entry_urls": [
+      "https://www.lakecountyclerk.org/",
+      "https://www.lakecountyclerk.org/default.aspx"
+    ]
+  },
+  {
+    "county": "Lee",
+    "entry_urls": [
+      "https://www.leeclerk.org"
+    ]
+  },
+  {
+    "county": "Leon",
+    "entry_urls": [
+      "https://www.leonclerk.com/"
+    ]
+  },
+  {
+    "county": "Levy",
+    "entry_urls": [
+      "https://levyclerk.com/",
+      "https://levyclerk.com/departments-services/court-services/online-forms"
+    ]
+  },
+  {
+    "county": "Liberty",
+    "entry_urls": [
+      "https://www.libertyclerk.com/"
+    ]
+  },
+  {
+    "county": "Madison",
+    "entry_urls": [
+      "https://www.madisonclerk.com/"
+    ]
+  },
+  {
+    "county": "Manatee",
+    "entry_urls": [
+      "https://www.manateeclerk.com/"
+    ]
+  },
+  {
+    "county": "Marion",
+    "entry_urls": [
+      "https://www.marioncountyclerk.org/"
+    ]
+  },
+  {
+    "county": "Martin",
+    "entry_urls": [
+      "https://www.martinclerk.com/"
+    ]
+  },
+  {
+    "county": "Miami-Dade",
+    "entry_urls": [
+      "https://www.miamidadeclerk.gov/clerk/e-filing.page",
+      "https://www.miamidadeclerk.gov/"
+    ]
+  },
+  {
+    "county": "Monroe",
+    "entry_urls": [
+      "https://www.monroeclerk.com/"
+    ]
+  },
+  {
+    "county": "Nassau",
+    "entry_urls": [
+      "https://www.nassauclerk.com/"
+    ]
+  },
+  {
+    "county": "Okaloosa",
+    "entry_urls": [
+      "https://www.okaloosaclerk.com/"
+    ]
+  },
+  {
+    "county": "Okeechobee",
+    "entry_urls": [
+      "https://www.okeechobeeclerk.com/"
+    ]
+  },
+  {
+    "county": "Orange",
+    "entry_urls": [
+      "https://www.myorangeclerk.com/"
+    ]
+  },
+  {
+    "county": "Osceola",
+    "entry_urls": [
+      "https://www.osceolaclerk.com/"
+    ]
+  },
+  {
+    "county": "Palm Beach",
+    "entry_urls": [
+      "https://www.mypalmbeachclerk.com/services/forms-library/forms-a-z",
+      "https://www.mypalmbeachclerk.com/"
+    ]
+  },
+  {
+    "county": "Pasco",
+    "entry_urls": [
+      "https://www.pascoclerk.com",
+      "https://www.pascoclerk.com/330/Legal-Resource-Center"
+    ]
+  },
+  {
+    "county": "Pinellas",
+    "entry_urls": [
+      "https://www.mypinellasclerk.gov/Forms",
+      "https://www.mypinellasclerk.gov/"
+    ]
+  },
+  {
+    "county": "Polk",
+    "entry_urls": [
+      "https://www.polkcountyclerk.net/"
+    ]
+  },
+  {
+    "county": "Putnam",
+    "entry_urls": [
+      "https://www.putnamclerkfl.com/"
+    ]
+  },
+  {
+    "county": "Santa Rosa",
+    "entry_urls": [
+      "https://www.santarosaclerk.com/"
+    ]
+  },
+  {
+    "county": "Sarasota",
+    "entry_urls": [
+      "https://www.sarasotaclerk.com/"
+    ]
+  },
+  {
+    "county": "Seminole",
+    "entry_urls": [
+      "https://www.seminoleclerk.org/"
+    ]
+  },
+  {
+    "county": "St. Johns",
+    "entry_urls": [
+      "https://www.stjohnsclerk.com/"
+    ]
+  },
+  {
+    "county": "St. Lucie",
+    "entry_urls": [
+      "https://www.stlucieclerk.com/"
+    ]
+  },
+  {
+    "county": "Sumter",
+    "entry_urls": [
+      "https://www.sumterclerk.com/"
+    ]
+  },
+  {
+    "county": "Suwannee",
+    "entry_urls": [
+      "https://www.suwanneeclerk.com/"
+    ]
+  },
+  {
+    "county": "Taylor",
+    "entry_urls": [
+      "https://www.taylorclerk.com/"
+    ]
+  },
+  {
+    "county": "Union",
+    "entry_urls": [
+      "https://www.unionclerk.com/"
+    ]
+  },
+  {
+    "county": "Volusia",
+    "entry_urls": [
+      "https://www.clerk.org/",
+      "https://www.clerk.org/forms.aspx"
+    ]
+  },
+  {
+    "county": "Wakulla",
+    "entry_urls": [
+      "https://www.wakullaclerk.com/"
+    ]
+  },
+  {
+    "county": "Walton",
+    "entry_urls": [
+      "https://waltonclerkfl.gov/"
+    ]
+  },
+  {
+    "county": "Washington",
+    "entry_urls": [
+      "https://www.washingtonclerk.com/"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.jud1.flcourts.org/self-help"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.jud1.flcourts.org"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.jud2.flcourts.org/self-help"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.jud2.flcourts.org"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.jud3.flcourts.org/self-help"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.jud3.flcourts.org"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.jud4.org/self-help"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.jud4.org"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.circuit5.org/self-help-center"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.circuit5.org"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.jud6.flcourts.org/self-help"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.jud6.flcourts.org"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.circuit7.org/family-court-services"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.circuit7.org"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://circuit8.org/self-help"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.circuit8.org"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://ninthcircuit.org/self-help"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.ninthcircuit.org"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.jud10.flcourts.org/self-help-pro-se"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.jud10.flcourts.org"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.jud11.flcourts.org/Family-Court-Self-Help-Packets-and-Forms"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.jud11.flcourts.org"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.jud12.flcourts.org/About/Divisions/Family/Pro-Se-Forms-Instructions"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.jud12.flcourts.org"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.fljud13.org/SelfHelp.aspx"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.fljud13.org"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.jud14.flcourts.org/self-help"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.jud14.flcourts.org"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.15thcircuit.com/self-help"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.15thcircuit.com"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.jud16.flcourts.org/self-help"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.jud16.flcourts.org"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.17th.flcourts.org/self-help"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.17th.flcourts.org"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.flcourts18.org/self-help"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.flcourts18.org"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.circuit19.org/forms-and-checklists"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.circuit19.org"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.jud20.flcourts.org/self-help"
+    ]
+  },
+  {
+    "county": "CIRCUIT_?",
+    "entry_urls": [
+      "https://www.jud20.flcourts.org"
+    ]
+  }
+]

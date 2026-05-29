@@ -14,5 +14,14 @@ Thumbs.db
 *.tmp
 *~
 
-# Python venv
+# Python
 venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# Crawled form data (large, volatile)
+raw/forms/crawled/
