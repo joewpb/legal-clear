@@ -95,9 +95,10 @@ async def _throttle(url: str):
 class CamofoxClient:
     """Thin async wrapper around Camofox REST API."""
 
-    def __init__(self, base_url: str = CAMOFOX_URL, user_id: str = "fl-crawler"):
+    def __init__(self, base_url: str = CAMOFOX_URL, user_id: str = "fl-crawler", session_key: str = "crawl-001"):
         self.base = base_url.rstrip("/")
         self.user_id = user_id
+        self.session_key = session_key
         self._client = httpx.AsyncClient(timeout=NAV_TIMEOUT)
 
     async def new_tab(self, url: str) -> str | None:
@@ -105,7 +106,7 @@ class CamofoxClient:
         try:
             resp = await self._client.post(
                 f"{self.base}/tabs",
-                json={"userId": self.user_id, "url": url},
+                json={"userId": self.user_id, "sessionKey": self.session_key, "url": url},
             )
             if resp.status_code == 200:
                 data = resp.json()
