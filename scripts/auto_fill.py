@@ -16,8 +16,8 @@ from pathlib import Path
 from datetime import datetime
 from collections import defaultdict
 
-VENV = "/home/hermes/wiki/venv/bin/python3"
-FORMS_DIR = Path("/home/hermes/wiki/raw/forms")
+REPO_ROOT = Path(__file__).resolve().parent.parent
+FORMS_DIR = REPO_ROOT / "raw" / "forms"
 CATALOG_PATH = FORMS_DIR / "full_catalog.json"
 
 # Load catalog
@@ -431,7 +431,7 @@ doc.save("{dst}")
 doc.close()
 print(f"OK {{fc}} {{ec}}")
 '''
-    result = subprocess.run([VENV, "-c", code], capture_output=True, text=True, timeout=30)
+    result = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True, timeout=30)
     Path(tmp).unlink(missing_ok=True)
     return result.returncode == 0
 

@@ -13,7 +13,7 @@ from http.server import HTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
 from urllib.parse import unquote, urlparse, parse_qs
 
-ROOT_DIR = Path("/home/hermes/wiki")
+ROOT_DIR = Path(__file__).resolve().parent
 PORT = 8099
 HOST = "0.0.0.0"
 

@@ -36,7 +36,8 @@ import httpx
 # ---------------------------------------------------------------------------
 
 CAMOFOX_URL = os.environ.get("CAMOFOX_URL", "http://localhost:9377")
-FORMS_DIR = Path("/home/hermes/wiki/raw/forms")
+REPO_ROOT = Path(__file__).resolve().parent.parent
+FORMS_DIR = REPO_ROOT / "raw" / "forms"
 
 USER_AGENT = (
     "FL-Court-Forms-Indexer/1.0 (public-records link indexer; "

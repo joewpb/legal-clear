@@ -1,137 +1,103 @@
 # Legal Clear — Florida Pro Se Court Form Assistant
 
-AI-powered tool for self-represented litigants in Florida.
+AI-powered tools for self-represented litigants in Florida. Helps people who can't afford an attorney find, understand, and fill out the right court forms.
 
----
+Covers all 20 judicial circuits and 67 counties.
 
-## Overview
-
-# Legal Clear — Florida Pro Se Court Form Assistant
-
-AI-powered tool for self-represented litigants in Florida. Two-phase pipeline:
-
-1. **Form Finder** — interview users, identify their case type, and show required forms with plain-English explanations
-2. **Auto-Fill Engine** — download fillable PDFs, extract form fields, interview the user, and generate ready-to-submit court documents
-
-Covers all 20 circuits and 67 counties.
-
-## How It Works
-
-```
-User describes their situation
-        ↓
-Form Finder (decision tree + county lookup)
-        ↓
-Auto-Fill Engine (pymupdf extracts AcroForm fields)
-        ↓
-User interview (plain-English questions)
-        ↓
-Filled PDFs ready for e-filing at myflcourtaccess.com
-```
-
-## Features
-
-- **107+ Supreme Court forms** cataloged across 20 form categories
-- **52 circuit-specific local forms** from Circuits 5, 10, 11, and 19
-- **2,000+ extracted form fields** with types (text, checkbox, radio)
-- **County picker** with circuit lookup for all 67 Florida counties
-- **Dark-mode web frontend** served at http://100.103.42.109:8088 (Tailscale)
-- **Bulk crawler** for harvesting forms from county clerk websites
-- **Plain-English explanations** — no legalese required
-
-## Project Structure
-
-```
-wiki/
-├── scripts/
-│   ├── form_finder.py          # Phase 1 — what forms do I need?
-│   ├── auto_fill.py            # Phase 2+3 — interview → fill → output PDFs
-│   ├── fl_forms_crawler.py     # Bulk crawler (all 67 counties + 20 circuits)
-│   └── sources.json            # 117 entry-point URLs for the crawler
-├── raw/
-│   ├── forms/                  # 68 Supreme Court fillable PDFs
-│   │   ├── circuits/           # 52 circuit-specific local PDFs
-│   │   └── form_fields.json    # Extracted field names/types for all forms
-│   └── articles/
-│       └── florida-court-forms-dataset.json  # Cases, circuits, counties
-├── index.html                  # Dark-mode bento grid frontend
-├── nginx.conf                  # Serves frontend on Tailscale
-├── concepts/                   # Wiki: court system, workflows
-├── entities/                   # Wiki: DIY Florida, form directory
-└── projects/                   # Wiki: Legal Clear overview
-```
-
-## Quick Start
-
-```bash
-# Setup
-python3 -m venv venv
-source venv/bin/activate
-pip install pymupdf pdfplumber httpx
-
-# Find forms for a case type
-python3 scripts/form_finder.py --case divorce-with-children --county "Miami-Dade"
-
-# Fill out forms (interactive interview)
-python3 scripts/auto_fill.py divorce-with-children
-# Output: filled PDFs in /tmp/legal_clear_YYYYMMDD_HHMMSS/
-```
-
-## Case Types Supported
-
-| Category | Case Types |
-|----------|-----------|
-| Family | Divorce (with/without children), child custody, child support modification, name change, domestic violence injunction |
-| Housing | Eviction (landlord), eviction defense (tenant) |
-| Money | Small claims |
-| Estate | Probate (small estate), full probate, guardianship |
-| Criminal | Expungement/sealing |
-
-## Important
-
-- **This is NOT legal advice.** Forms and fees change. Always verify with your county clerk.
-- DIY Florida (myflcourtaccess.com DIY tab) is not being updated and is unreliable.
-- Domestic violence injunctions have NO filing fee.
-- Eviction defense: only 5 business days to respond.
-
-## License
-
-MIT
-
+[See main README](../README.md) for the full project overview, structure, quick start, and case types.
 
 ---
 
 ## Architecture
 
+### Components
+
+| Component | Entry point | Status |
+|-----------|-------------|--------|
+| Form Finder | `scripts/form_finder.py` | Complete — 13 case types, interactive decision tree |
+| Auto-Fill Engine | `scripts/auto_fill.py` | Partial — 5 of 13 case types wired |
+| Web Frontend | `index.html` | Complete — dark-mode bento grid |
+| File Browser | `fileserver.py` (:8099) | Complete — markdown rendering, PDF preview |
+| Crawler | `scripts/fl_forms_crawler.py` | Complete — requires Camofox |
+| Quartz Wiki | nginx :8100 | Complete — Obsidian-compatible static site |
+
 ### Inputs
+
+- `raw/articles/florida-court-forms-dataset.json` — master dataset (13 case types, 20 circuits, 67 counties)
+- `raw/forms/` — 125 downloaded PDFs (98MB)
+- `raw/forms/full_catalog.json` — 71 forms indexed
+- `raw/forms/form_fields.json` — extracted AcroForm fields (10 forms)
+- `scripts/sources.json` — 117 crawler entry-point URLs
 
 ### Outputs
 
+- Filled PDF forms in `/tmp/legal_clear_YYYYMMDD_HHMMSS/`
+- Form recommendation text (stdout)
+- Crawler index: `fl_forms_index_crawled.json`
+- Dead link report: `dead_links_report.csv`
+
 ### Dependencies
-_None specified_
+
+Python: `pymupdf`, `pdfplumber`, `httpx`
+External: Camofox (for crawler), nginx (for web serving), Quartz (for wiki)
 
 ### Data Flow
 
 ```mermaid
 flowchart LR
     subgraph Inputs
+        DS[Master Dataset JSON]
+        PDFs[125 PDF Forms]
+        SOURCES[117 Source URLs]
     end
 
     subgraph Processing
-        P[Legal Clear — Florida Pro Se Court Form Assistant]
+        FINDER[Form Finder<br/>decision tree]
+        FILL[Auto-Fill Engine<br/>pymupdf]
+        CRAWL[Crawler<br/>Camofox]
+        WEB[Web Frontend<br/>bento grid]
+        FS[File Browser<br/>Python stdlib]
     end
 
     subgraph Outputs
+        REC[Form Recommendations]
+        FILLED[Filled PDFs]
+        INDEX[Crawled Index]
+        REPORT[Dead Link Report]
     end
 
+    DS --> FINDER --> REC
+    DS --> FILL --> FILLED
+    PDFs --> FILL
+    SOURCES --> CRAWL --> INDEX
+    CRAWL --> REPORT
+    DS --> WEB
+    PDFs --> FS
 ```
-
 
 ---
 
-## Code References
+## Phase Completion Status
 
-_None provided_
+| Phase | Description | Status | Notes |
+|-------|-------------|--------|-------|
+| 1 | Smart Directory | ✓ Complete | Dataset, wiki, 125 PDFs |
+| 2 | AI Form Finder | ✓ Complete | Decision tree, form explanations, Hermes skill |
+| 3 | Auto-Fill Engine (v1) | ✓ Complete | `form_filler.py` — removed, superseded by v2 |
+| 3 | Auto-Fill Engine (v2) | ⚠️ Partial | `auto_fill.py` handles 5 of 13 case types |
+| 3 | Crawler | ✓ Complete | Camofox-based, 3-phase pipeline |
+| 3 | Web Frontend | ✓ Complete | Dark-mode bento grid, county lookup |
+| 3 | File Browser | ✓ Complete | PDF preview, markdown rendering |
+| 3 | Quartz Wiki | ✓ Complete | Obsidian-compatible static site |
+
+### Unfinished Work
+
+- **Auto-fill coverage**: 8 of 13 case types have no interview/mapping (eviction, small claims variants, probate, guardianship, expungement)
+- **Field mapping**: Only ~30% of extracted form fields have interview question mappings
+- **No test suite**: Zero automated tests
+- **No CI/CD**: No GitHub Actions or deployment automation
+- **County-specific forms**: Only Circuits 5, 11, 19 downloaded; 17 circuits have no local forms
+- **form_finder.py**: `--list` flag shows all cases but the interview tree only routes to 13 — could add `--case` shortcuts for all
 
 ---
 
