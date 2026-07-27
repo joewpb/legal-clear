@@ -139,8 +139,22 @@ Several files contain absolute paths to `/home/hermes/wiki/`. These need to be m
 | `fileserver.py` | `ROOT_DIR = Path("/home/hermes/wiki")` |
 | `nginx.conf` | `root /home/hermes/wiki` ×2 |
 | `scripts/auto_fill.py` | `FORMS_DIR = Path("/home/hermes/wiki/raw/forms")`, `VENV = "/home/hermes/wiki/venv/bin/python3"` |
-| `scripts/form_filler.py` | likely similar |
 | `scripts/fl_forms_crawler.py` | `FORMS_DIR = Path("/home/hermes/wiki/raw/forms")` |
+
+> **Note:** These were fixed in the repo but listed here for reference.
+
+## Architecture
+
+This repo is the **knowledge base + form-finder scripts** layer of a larger system:
+
+| Layer | Where | What |
+|-------|-------|------|
+| **GitHub** | `joewpb/legal-clear` | Wiki, form-finder, auto-fill, crawler, web frontend |
+| **Supabase** | `miedifclpqewnixxkahs` | 764 court_forms rows, 564 PDFs, 515 published with summaries |
+| **Backend** | Railway `zesty-delight` | FastAPI on :8001 — search, form API, user-facing features |
+| **Frontend** | Railway `appealing-victory` | React on :3000 — v2 user interface |
+| **Harvest** | `/home/hermes/workspace/legalclear/` | Bridge → extract → enrich pipeline via DeepSeek |
+| **Opinions** | Orin PostgreSQL | 443,390 FL court opinions with summaries |
 
 ## Important
 

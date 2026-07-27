@@ -88,14 +88,27 @@ flowchart LR
 | 3 | Web Frontend | ✓ Complete | Dark-mode bento grid, county lookup |
 | 3 | File Browser | ✓ Complete | PDF preview, markdown rendering |
 | 3 | Quartz Wiki | ✓ Complete | Obsidian-compatible static site |
+| — | **Supabase Backend** | ✓ Complete | 764 forms in `court_forms` table, 515 published with DeepSeek summaries |
+| — | **Harvest Pipeline** | ✓ Complete | Bridge → extract → enrich pipeline for county-level forms |
 
 ### Unfinished Work
 
-- **County-specific forms**: 7 of 13 case types use county-specific forms not in our PDF catalog (eviction, small claims, probate, guardianship, expungement). The auto-fill now provides informational interviews with next-step guidance for these.
-- **Field mapping**: ~50% of extracted form fields have automated interview-to-field mappings. Financial forms (12.902b/c) have many unmapped fields that need per-field interview questions.
-- **No test suite**: Zero automated tests.
-- **No CI/CD**: No GitHub Actions or deployment automation.
-- **Missing circuit forms**: Only Circuits 5, 11, 19 have downloaded local forms; 17 circuits have none.
+- **Field mapping depth**: Financial forms (12.902b/c) have many unmapped fields needing per-field interview questions
+- **No test suite**: Zero automated tests in this repo
+- **No CI/CD**: No GitHub Actions or deployment automation
+- **Git history noise**: 37 identical commit messages from discovery agent squash
+
+### Architecture Note
+
+This repo is the **knowledge base + form-finder scripts** layer. The full LegalClear system includes:
+
+- **Supabase**: `miedifclpqewnixxkahs` — 764 court_forms rows, 564 PDFs in Storage
+- **Backend**: FastAPI on Railway (`zesty-delight`) — port 8001
+- **Frontend**: React on Railway (`appealing-victory`) — port 3000
+- **Harvest pipeline**: `/home/hermes/workspace/legalclear/` — bridge → extract → enrich via DeepSeek
+- **Court opinions**: 443,390 FL opinions in PostgreSQL on Orin (separate pipeline)
+
+The GitHub repo (`joewpb/legal-clear`) hosts the raw form PDFs, knowledge base wiki, form-finder decision tree, auto-fill engine, crawler, and web frontend. The Supabase backend hosts the full county-level form catalog with search, summaries, and text extraction.
 
 ---
 
