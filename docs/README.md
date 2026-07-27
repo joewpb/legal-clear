@@ -83,8 +83,7 @@ flowchart LR
 |-------|-------------|--------|-------|
 | 1 | Smart Directory | ✓ Complete | Dataset, wiki, 125 PDFs |
 | 2 | AI Form Finder | ✓ Complete | Decision tree, form explanations, Hermes skill |
-| 3 | Auto-Fill Engine (v1) | ✓ Complete | `form_filler.py` — removed, superseded by v2 |
-| 3 | Auto-Fill Engine (v2) | ⚠️ Partial | `auto_fill.py` handles 5 of 13 case types |
+| 3 | Auto-Fill Engine | ✓ Complete | `auto_fill.py` — interviews for all 13 case types, PDF fill for 6 |
 | 3 | Crawler | ✓ Complete | Camofox-based, 3-phase pipeline |
 | 3 | Web Frontend | ✓ Complete | Dark-mode bento grid, county lookup |
 | 3 | File Browser | ✓ Complete | PDF preview, markdown rendering |
@@ -92,12 +91,11 @@ flowchart LR
 
 ### Unfinished Work
 
-- **Auto-fill coverage**: 8 of 13 case types have no interview/mapping (eviction, small claims variants, probate, guardianship, expungement)
-- **Field mapping**: Only ~30% of extracted form fields have interview question mappings
-- **No test suite**: Zero automated tests
-- **No CI/CD**: No GitHub Actions or deployment automation
-- **County-specific forms**: Only Circuits 5, 11, 19 downloaded; 17 circuits have no local forms
-- **form_finder.py**: `--list` flag shows all cases but the interview tree only routes to 13 — could add `--case` shortcuts for all
+- **County-specific forms**: 7 of 13 case types use county-specific forms not in our PDF catalog (eviction, small claims, probate, guardianship, expungement). The auto-fill now provides informational interviews with next-step guidance for these.
+- **Field mapping**: ~50% of extracted form fields have automated interview-to-field mappings. Financial forms (12.902b/c) have many unmapped fields that need per-field interview questions.
+- **No test suite**: Zero automated tests.
+- **No CI/CD**: No GitHub Actions or deployment automation.
+- **Missing circuit forms**: Only Circuits 5, 11, 19 have downloaded local forms; 17 circuits have none.
 
 ---
 
