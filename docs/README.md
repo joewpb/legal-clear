@@ -1,114 +1,137 @@
 # Legal Clear — Florida Pro Se Court Form Assistant
 
-AI-powered tools for self-represented litigants in Florida. Helps people who can't afford an attorney find, understand, and fill out the right court forms.
+AI-powered tool for self-represented litigants in Florida.
 
-Covers all 20 judicial circuits and 67 counties.
+---
 
-[See main README](../README.md) for the full project overview, structure, quick start, and case types.
+## Overview
+
+# Legal Clear — Florida Pro Se Court Form Assistant
+
+AI-powered tool for self-represented litigants in Florida. Two-phase pipeline:
+
+1. **Form Finder** — interview users, identify their case type, and show required forms with plain-English explanations
+2. **Auto-Fill Engine** — download fillable PDFs, extract form fields, interview the user, and generate ready-to-submit court documents
+
+Covers all 20 circuits and 67 counties.
+
+## How It Works
+
+```
+User describes their situation
+        ↓
+Form Finder (decision tree + county lookup)
+        ↓
+Auto-Fill Engine (pymupdf extracts AcroForm fields)
+        ↓
+User interview (plain-English questions)
+        ↓
+Filled PDFs ready for e-filing at myflcourtaccess.com
+```
+
+## Features
+
+- **107+ Supreme Court forms** cataloged across 20 form categories
+- **52 circuit-specific local forms** from Circuits 5, 10, 11, and 19
+- **2,000+ extracted form fields** with types (text, checkbox, radio)
+- **County picker** with circuit lookup for all 67 Florida counties
+- **Dark-mode web frontend** served at http://100.103.42.109:8088 (Tailscale)
+- **Bulk crawler** for harvesting forms from county clerk websites
+- **Plain-English explanations** — no legalese required
+
+## Project Structure
+
+```
+wiki/
+├── scripts/
+│   ├── form_finder.py          # Phase 1 — what forms do I need?
+│   ├── auto_fill.py            # Phase 2+3 — interview → fill → output PDFs
+│   ├── fl_forms_crawler.py     # Bulk crawler (all 67 counties + 20 circuits)
+│   └── sources.json            # 117 entry-point URLs for the crawler
+├── raw/
+│   ├── forms/                  # 68 Supreme Court fillable PDFs
+│   │   ├── circuits/           # 52 circuit-specific local PDFs
+│   │   └── form_fields.json    # Extracted field names/types for all forms
+│   └── articles/
+│       └── florida-court-forms-dataset.json  # Cases, circuits, counties
+├── index.html                  # Dark-mode bento grid frontend
+├── nginx.conf                  # Serves frontend on Tailscale
+├── concepts/                   # Wiki: court system, workflows
+├── entities/                   # Wiki: DIY Florida, form directory
+└── projects/                   # Wiki: Legal Clear overview
+```
+
+## Quick Start
+
+```bash
+# Setup
+python3 -m venv venv
+source venv/bin/activate
+pip install pymupdf pdfplumber httpx
+
+# Find forms for a case type
+python3 scripts/form_finder.py --case divorce-with-children --county "Miami-Dade"
+
+# Fill out forms (interactive interview)
+python3 scripts/auto_fill.py divorce-with-children
+# Output: filled PDFs in /tmp/legal_clear_YYYYMMDD_HHMMSS/
+```
+
+## Case Types Supported
+
+| Category | Case Types |
+|----------|-----------|
+| Family | Divorce (with/without children), child custody, child support modification, name change, domestic violence injunction |
+| Housing | Eviction (landlord), eviction defense (tenant) |
+| Money | Small claims |
+| Estate | Probate (small estate), full probate, guardianship |
+| Criminal | Expungement/sealing |
+
+## Important
+
+- **This is NOT legal advice.** Forms and fees change. Always verify with your county clerk.
+- DIY Florida (myflcourtaccess.com DIY tab) is not being updated and is unreliable.
+- Domestic violence injunctions have NO filing fee.
+- Eviction defense: only 5 business days to respond.
+
+## License
+
+MIT
+
 
 ---
 
 ## Architecture
 
-### Components
-
-| Component | Entry point | Status |
-|-----------|-------------|--------|
-| Form Finder | `scripts/form_finder.py` | Complete — 13 case types, interactive decision tree |
-| Auto-Fill Engine | `scripts/auto_fill.py` | Partial — 5 of 13 case types wired |
-| Web Frontend | `index.html` | Complete — dark-mode bento grid |
-| File Browser | `fileserver.py` (:8099) | Complete — markdown rendering, PDF preview |
-| Crawler | `scripts/fl_forms_crawler.py` | Complete — requires Camofox |
-| Quartz Wiki | nginx :8100 | Complete — Obsidian-compatible static site |
-
 ### Inputs
-
-- `raw/articles/florida-court-forms-dataset.json` — master dataset (13 case types, 20 circuits, 67 counties)
-- `raw/forms/` — 125 downloaded PDFs (98MB)
-- `raw/forms/full_catalog.json` — 71 forms indexed
-- `raw/forms/form_fields.json` — extracted AcroForm fields (10 forms)
-- `scripts/sources.json` — 117 crawler entry-point URLs
 
 ### Outputs
 
-- Filled PDF forms in `/tmp/legal_clear_YYYYMMDD_HHMMSS/`
-- Form recommendation text (stdout)
-- Crawler index: `fl_forms_index_crawled.json`
-- Dead link report: `dead_links_report.csv`
-
 ### Dependencies
-
-Python: `pymupdf`, `pdfplumber`, `httpx`
-External: Camofox (for crawler), nginx (for web serving), Quartz (for wiki)
+_None specified_
 
 ### Data Flow
 
 ```mermaid
 flowchart LR
     subgraph Inputs
-        DS[Master Dataset JSON]
-        PDFs[125 PDF Forms]
-        SOURCES[117 Source URLs]
     end
 
     subgraph Processing
-        FINDER[Form Finder<br/>decision tree]
-        FILL[Auto-Fill Engine<br/>pymupdf]
-        CRAWL[Crawler<br/>Camofox]
-        WEB[Web Frontend<br/>bento grid]
-        FS[File Browser<br/>Python stdlib]
+        P[Legal Clear — Florida Pro Se Court Form Assistant]
     end
 
     subgraph Outputs
-        REC[Form Recommendations]
-        FILLED[Filled PDFs]
-        INDEX[Crawled Index]
-        REPORT[Dead Link Report]
     end
 
-    DS --> FINDER --> REC
-    DS --> FILL --> FILLED
-    PDFs --> FILL
-    SOURCES --> CRAWL --> INDEX
-    CRAWL --> REPORT
-    DS --> WEB
-    PDFs --> FS
 ```
+
 
 ---
 
-## Phase Completion Status
+## Code References
 
-| Phase | Description | Status | Notes |
-|-------|-------------|--------|-------|
-| 1 | Smart Directory | ✓ Complete | Dataset, wiki, 125 PDFs |
-| 2 | AI Form Finder | ✓ Complete | Decision tree, form explanations, Hermes skill |
-| 3 | Auto-Fill Engine | ✓ Complete | `auto_fill.py` — interviews for all 13 case types, PDF fill for 6 |
-| 3 | Crawler | ✓ Complete | Camofox-based, 3-phase pipeline |
-| 3 | Web Frontend | ✓ Complete | Dark-mode bento grid, county lookup |
-| 3 | File Browser | ✓ Complete | PDF preview, markdown rendering |
-| 3 | Quartz Wiki | ✓ Complete | Obsidian-compatible static site |
-| — | **Supabase Backend** | ✓ Complete | 764 forms in `court_forms` table, 515 published with DeepSeek summaries |
-| — | **Harvest Pipeline** | ✓ Complete | Bridge → extract → enrich pipeline for county-level forms |
-
-### Unfinished Work
-
-- **Field mapping depth**: Financial forms (12.902b/c) have many unmapped fields needing per-field interview questions
-- **No test suite**: Zero automated tests in this repo
-- **No CI/CD**: No GitHub Actions or deployment automation
-- **Git history noise**: 37 identical commit messages from discovery agent squash
-
-### Architecture Note
-
-This repo is the **knowledge base + form-finder scripts** layer. The full LegalClear system includes:
-
-- **Supabase**: `miedifclpqewnixxkahs` — 764 court_forms rows, 564 PDFs in Storage
-- **Backend**: FastAPI on Railway (`zesty-delight`) — port 8001
-- **Frontend**: React on Railway (`appealing-victory`) — port 3000
-- **Harvest pipeline**: `/home/hermes/workspace/legalclear/` — bridge → extract → enrich via DeepSeek
-- **Court opinions**: 443,390 FL opinions in PostgreSQL on Orin (separate pipeline)
-
-The GitHub repo (`joewpb/legal-clear`) hosts the raw form PDFs, knowledge base wiki, form-finder decision tree, auto-fill engine, crawler, and web frontend. The Supabase backend hosts the full county-level form catalog with search, summaries, and text extraction.
+_None provided_
 
 ---
 
@@ -117,8 +140,8 @@ The GitHub repo (`joewpb/legal-clear`) hosts the raw form PDFs, knowledge base w
 | Field | Value |
 |-------|-------|
 | Hermes Run ID | discovery |
-| Payload Hash | 186c30fcf1183f4f7aaa92311f9119e59af567cc28646505c69ddcee841f4ee1 |
+| Payload Hash | 08e945989a84c7ac947c1c85c8a565f6d3ea4172ee46f0aa3a7a868ed672e287 |
 | Source Path | /home/hermes/workspace/legal-clear |
-| Published At | 2026-07-27T09:01:22Z |
+| Published At | 2026-07-28T09:01:17Z |
 | Kind | project |
 | Destination | existing_repo |
