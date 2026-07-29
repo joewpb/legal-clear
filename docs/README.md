@@ -140,8 +140,8 @@ _None provided_
 | Field | Value |
 |-------|-------|
 | Hermes Run ID | discovery |
-| Payload Hash | 08e945989a84c7ac947c1c85c8a565f6d3ea4172ee46f0aa3a7a868ed672e287 |
+| Payload Hash | 8db21d77d43c5234a52e323e13ab933f8b5bff9653b22681cf2d7cbf3d135373 |
 | Source Path | /home/hermes/workspace/legal-clear |
-| Published At | 2026-07-28T09:01:17Z |
+| Published At | 2026-07-29T09:01:39Z |
 | Kind | project |
 | Destination | existing_repo |
